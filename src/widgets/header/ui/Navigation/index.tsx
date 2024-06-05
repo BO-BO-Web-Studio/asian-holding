@@ -66,8 +66,6 @@ function Navigation({ setModal, isOpenModal }: Props) {
           {/* </ModalContent> */}
         </Modal>
       </div>
-      <Burger />
-
     </nav>
   )
 }

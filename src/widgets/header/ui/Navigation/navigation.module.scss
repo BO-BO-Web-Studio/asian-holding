@@ -1,5 +1,6 @@
 @import 'src/@app/styles/variables';
 @import 'src/@app/styles/mixins';
+@import 'src/@app/styles/colors';
 @import 'menu-animation';
 
 .nav {
@@ -16,7 +17,7 @@
 
 .mainPage {
   .link {
-    color: #fff;
+    // color: #fff;
   }
 
   .active {
@@ -106,8 +107,8 @@
 }
 
 .link {
-  font-size: 17px;
-  line-height: 1.64;
+  font-size: 15px;
+  line-height: 160%;
   font-weight: 400;
   transition: all 250ms;
   color: $textDark;
@@ -120,7 +121,7 @@
 
   @media (max-width: $tablet) {
     color: #fff;
-    font-size: 19px;
+    font-size: 15px;
     line-height: 32px;
   }
 
