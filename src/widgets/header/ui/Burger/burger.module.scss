@@ -1,0 +1,122 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+$burgerColor: $secondary;
+
+.burger {
+  $size: 48px;
+  width: $size;
+  height: $size;
+  border: 2px solid $burgerColor;
+  border-radius: 50%;
+  display: none;
+  background: none;
+  position: relative;
+
+  @media (max-width: $desktopSmall) {
+    display: block;
+  }
+
+  @media (max-width: $mobileLarge) {
+    border-width: 1px;
+  }
+
+  &:hover {
+    @media (min-width: $desktopSmall + 1px) {
+      border-color: lighten($primary, 5%);
+
+      span {
+        background: lighten($primary, 5%);
+
+        &::after,
+        &::before {
+          background: lighten($primary, 5%);
+        }
+      }
+    }
+  }
+
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: $burgerColor;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background 250ms;
+
+    @media (max-width: $mobileLarge) {
+      width: 16px;
+      height: 1px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: $burgerColor;
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 250ms;
+
+      @media (max-width: $mobileLarge) {
+        width: 16px;
+        height: 1px;
+        top: -5px;
+      }
+    }
+
+    &::after {
+      top: 6px;
+
+      @media (max-width: $mobileLarge) {
+        top: 5px;
+      }
+    }
+  }
+}
+
+.open {
+  border-color: #fff;
+  //position: absolute;
+  z-index: 12;
+
+  span {
+    visibility: hidden;
+    background: #fff;
+
+    &::before,
+    &::after {
+      visibility: visible;
+      background: #fff;
+    }
+
+    &::after {
+      transform: translateX(-50%) rotate(45deg);
+      top: 0;
+    }
+
+    &::before {
+      transform: translateX(-50%) rotate(-45deg);
+      top: 0;
+    }
+  }
+}
+
+.mainPage {
+  $burgerColor: #fff;
+  border-color: $burgerColor;
+
+  span {
+    background: $burgerColor;
+
+    &::before,
+    &::after {
+      background: $burgerColor;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+.contacts {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  // flex-basis: 35%;
+  // flex-grow: 1;
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    margin-right: 5px;
+  }
+}
+
+.mainPage {
+  .phone {
+    color: #fff;
+  }
+}
+
+.phone_bl {
+  display: flex;
+  text-decoration: none;
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+.phone_svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 12px;
+
+  svg {
+    fill: none;
+  }
+}
+
+.phone {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone_link {
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 1.64;
+  color: $textWhite;
+  display: block;
+  margin-right: 28px;
+  text-decoration: none;
+  transition: all 250ms;
+
+  span {
+    display: block;
+  }
+
+  @media (max-width: 920px) {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.button {
+  margin-right: 20px;
+
+  @media (max-width: $tablet) {
+    margin-right: 5px;
+  }
+}

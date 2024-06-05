@@ -1,0 +1,18 @@
+@import 'mixins';
+
+// NT Somic: 400 & 500 & 700
+@include font-face(
+  $name: 'NT Somic',
+  $weight: 400,
+  $woff2: '/assets/fonts/NTSomic-Regular.woff2'
+);
+@include font-face(
+  $name: 'NT Somic',
+  $weight: 500,
+  $woff2: '/assets/fonts/NTSomic-Medium.woff2'
+);
+@include font-face(
+  $name: 'NT Somic',
+  $weight: 700,
+  $woff2: '/assets/fonts/NTSomic-Bold.woff2'
+);

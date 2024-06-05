@@ -1,0 +1,47 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+
+.application {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  margin-bottom: 132px;
+  background-color: $primary;
+  border-radius: 12px;
+  overflow: hidden;
+  align-items: center;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: baseline;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.bl_text {
+  flex-basis: 50%;
+
+  @media (max-width: $tablet) {
+    flex-grow: 1;
+    margin-bottom: 20px;
+  }
+}
+
+.text {
+  padding: 0;
+  margin: 0;
+  font-size: 28px;
+  line-height: 114%;
+  font-weight: 600;
+  color: $textWhite;
+
+  @media (max-width: $tablet) {
+    font-size: 20px;
+  }
+}
+
+.button {
+  height: max-content;
+}
