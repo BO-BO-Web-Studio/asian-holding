@@ -23,18 +23,20 @@ function HeaderMain() {
     <div className={clsx(pathname === '/' && classes.mainPage)}>
       <Wrapper className={classes.wrapper}>
         <div className={classes.block}>
-          <div
-            className={classes.logo}
-          >
-            <Image
-              src={`/assets/icons/logo-main.svg`}
-              alt="iontravel"
-              width={52}
-              height={44}
-              priority
-            />
+          <div className={classes.header_left} >
+            <div
+              className={classes.logo}
+            >
+              <Image
+                src={`/assets/icons/logo-main.svg`}
+                alt="iontravel"
+                width={52}
+                height={44}
+                priority
+              />
+            </div>
+            <Navigation isOpenModal={isOpenModal} setModal={setModal} />
           </div>
-          <Navigation isOpenModal={isOpenModal} setModal={setModal} />
           <Contacts />
           <Modal
             isOpen={isOpenModal}

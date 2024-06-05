@@ -11,6 +11,7 @@ import { Button } from '@shared/ui/Button'
 import { ApplicationForm } from '@widgets/application'
 import { contacts } from '@shared/const/contacts'
 import { LangButton } from '@features/LangButton'
+import { Burger } from '../Burger'
 
 function Contacts() {
   const pathname = usePathname()
@@ -31,17 +32,18 @@ function Contacts() {
         <div className={classes.phone_svg}>
           <HandySvg
             src='/assets/icons/phone.svg'
-            whith={15}
-            height={15}
+            whith={24}
+            height={24}
           />
         </div>
         <div className={classes.phone} >
-          <span>{t('phone')}</span>
+          {/* <span>{t('phone')}</span> */}
           <a className={classes.phone_link} href={`tel:${contacts.link}`}>
             {contacts.phone}
           </a>
         </div>
       </div>
+      <LangButton />
       <Button
         className={classes.button}
         // bg='secondary'
@@ -49,8 +51,8 @@ function Contacts() {
         onClick={() => setModal()}
       >
         {t('contactUs')}
-      </Button>
-      <LangButton />
+      </Button> 
+      <Burger />
       <ApplicationForm isOpen={isOpen} close={setModal} />
     </div>
   )

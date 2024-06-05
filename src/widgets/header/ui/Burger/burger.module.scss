@@ -1,7 +1,7 @@
 @import 'src/@app/styles/variables';
 @import 'src/@app/styles/mixins';
 
-$burgerColor: $secondary;
+$burgerColor: $primary;
 
 .burger {
   $size: 48px;
@@ -12,6 +12,7 @@ $burgerColor: $secondary;
   display: none;
   background: none;
   position: relative;
+  cursor: pointer;
 
   @media (max-width: $desktopSmall) {
     display: block;
@@ -81,18 +82,19 @@ $burgerColor: $secondary;
 }
 
 .open {
-  border-color: #fff;
+  $burgerColor: #fff !important;
+  border-color: $burgerColor;
   //position: absolute;
   z-index: 12;
 
   span {
     visibility: hidden;
-    background: #fff;
+    background: $burgerColor;
 
     &::before,
     &::after {
       visibility: visible;
-      background: #fff;
+      background: $burgerColor;
     }
 
     &::after {
@@ -108,7 +110,7 @@ $burgerColor: $secondary;
 }
 
 .mainPage {
-  $burgerColor: #fff;
+  $burgerColor: #000;
   border-color: $burgerColor;
 
   span {

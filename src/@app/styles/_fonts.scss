@@ -1,18 +1,19 @@
 @import 'mixins';
 
-// NT Somic: 400 & 500 & 700
+// Onest: 400 & 500 & 700
 @include font-face(
-  $name: 'NT Somic',
+  $name: 'Onest',
   $weight: 400,
-  $woff2: '/assets/fonts/NTSomic-Regular.woff2'
+  $woff2: '/assets/fonts/Onest-Regular.woff2'
 );
 @include font-face(
-  $name: 'NT Somic',
+  $name: 'Onest',
   $weight: 500,
-  $woff2: '/assets/fonts/NTSomic-Medium.woff2'
+  $woff2: '/assets/fonts/Onest-Medium.woff2'
 );
 @include font-face(
-  $name: 'NT Somic',
+  $name: 'Onest',
   $weight: 700,
-  $woff2: '/assets/fonts/NTSomic-Bold.woff2'
+  $woff2: '/assets/fonts/Onest-Bold.woff2'
 );
+

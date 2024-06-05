@@ -4,25 +4,31 @@
 .wrapper {
   padding: 0;
   margin: 0;
+  margin-right: 28px;
 }
-
 .lang {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid white;
-  font-weight: 500;
-  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 100%;
+  color: $textDark;
   background-color: transparent;
   cursor: pointer;
   text-decoration: none;
+  
 
   // @media (max-width: $desktopSmall) {
   //   display: none;
   // }
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: none;
+  margin-right: 8px;
 }
 
 .item {
