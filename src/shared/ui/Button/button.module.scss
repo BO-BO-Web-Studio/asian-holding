@@ -3,14 +3,9 @@
 
 .button {
   font-family: inherit;
-  padding: 12px 20px;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 20px;
-  color: #000;
   text-decoration: none;
   background: none;
-  border-radius: 8px;
+  border: 1px solid transparent;
   cursor: pointer;
   display: inline-flex;
   transition: all 250ms;
@@ -18,130 +13,155 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
+  color: $textDark;
 
   &:disabled {
-    opacity: .6;
+    opacity: 0.6;
     cursor: not-allowed;
   }
 }
 
-// sizes
+@mixin buttonStyles($prefix: '') {
 
-.size-large {
-  font-size: 15px;
-  line-height: 24px;
-}
+  // sizes
+  .#{$prefix}size {
+    &-large {
+      font-size: 17px;
+      line-height: 28px;
+      padding: 16px 72px;
 
-.size-small {
-  font-size: 13px;
-  line-height: 20px;
+      @media (max-width: $tablet) {
+        font-size: 15px;
+        line-height: 24px;
+        padding: 12px 32px;
+      }
+    }
 
-  @media (max-width: $mobileLarge) {
-    font-size: 15px;
-    line-height: 24px;
-  }
-}
+    &-medium,
+    &-small {
+      font-size: 15px;
+      line-height: 24px;
+      padding: 12px 51px;
+    }
 
-.size-moreButton {
-  min-width: 192px;
-  font-size: 13px;
-  line-height: 20px;
+    &-small {
+      padding: 12px 20px;
 
-  @media (max-width: $desktopSmall) {
-    font-size: 11px;
-    line-height: 16px;
-    letter-spacing: .4px;
-    min-width: auto;
-    padding: 7px 11px;
-  }
-}
-
-// border-radius
-
-.radius-large {
-  border-radius: 12px;
-}
-
-.radius-small {
-  border-radius: 8px;
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-// colors
-
-.primary {
-  background: $primary;
-  color: #fff;
-  border: 1px solid $primary;
-
-  &:hover {
-    background: darken($primary, 2%);
-    border-color: darken($primary, 2%);
-  }
-
-  &:active {
-    background: darken($primary, 4%);
-    border-color: darken($primary, 4%);
-  }
-
-  &:disabled {
-    &:hover,
-    &:active {
-      background: $primary;
-      color: #fff;
-      border-color: $primary;
+      @media (max-width: $tablet) {
+        padding: 8px 16px;
+      }
     }
   }
-}
 
-.primaryOutline {
-  background: none;
-  color: $primary;
-  border: 1px solid $primary;
+  // border radius
+  .#{$prefix}radius {
 
-  &:hover {
-    background: $primary;
-    color: #fff;
-  }
+    // fullRounded radius for button-large
+    &-fullRounded {
+      &.#{$prefix}size-large {
+        border-radius: 60px;
 
-  &:active {
-    background: darken($primary, 4%);
-    border-color: darken($primary, 4%);
-  }
+        @media (max-width: $tablet) {
+          border-radius: 48px;
+        }
+      }
 
-  &:disabled {
-    &:hover,
-    &:active {
-      background: none;
-      color: $primary;
-      border-color: $primary;
+      // fullRounded radius for button-medium and button-small
+      &.#{$prefix}size-medium,
+      &.#{$prefix}size-small {
+        border-radius: 56px;
+      }
+    }
+
+    &-small {
+      border-radius: 8px;
     }
   }
-}
 
-.lightOutline {
-  background: none;
-  color: #fff;
-  border: 1px solid #fff;
+  // variants
+  .#{$prefix}variant {
+    &-outlined {
 
-  &:hover {
-    background: #fff;
-    color: #000;
-  }
+      // primary-outlined
+      &.#{$prefix}bg-primary {
+        border-color: $primary;
 
-  &:active {
-    background: darken(#fff, 4%);
-    border-color: darken(#fff, 4%);
-  }
+        &:hover {
+          background: $primary;
+        }
 
-  &:disabled {
-    &:hover,
-    &:active {
-      color: #fff;
-      border-color: #fff;
+        &:active {
+          background: darken($primary, 8%);
+          border-color: darken($primary, 8%);
+        }
+
+        &:disabled {
+          border-color: $primary;
+          background: none;
+        }
+      }
+
+      // secondary-outlined
+      &.#{$prefix}bg-secondary {
+        border-color: $white;
+        color: $white;
+
+        &:hover {
+          background: $white;
+          color: $black;
+        }
+
+        &:active {
+          background: darken($white, 8%);
+          border-color: darken($white, 8%);
+        }
+      }
+    }
+
+    &-contained {
+
+      // primary-contained
+      &.#{$prefix}bg-primary {
+        border-color: $primary;
+        background: $primary;
+        color: $textWhite;
+
+        &:hover {
+          background: darken($primary, 5%);
+        }
+
+        &:active {
+          background: darken($primary, 9%);
+        }
+      }
+
+      // secondary-contained
+      &.#{$prefix}bg-secondary {
+        border-color: $secondary;
+        background: $secondary;
+        color: $textDark;
+
+        &:hover {
+          background: darken($secondary, 5%);
+        }
+
+        &:active {
+          background: darken($secondary, 9%);
+          border-color: darken($secondary, 9%);
+        }
+      }
     }
   }
+
+  // fullWidth
+  .#{$prefix}fullWidth-true {
+    width: 100%;
+  }
+
+  .#{$prefix}fullWidth-false {
+    width: auto;
+  }
 }
+
+@include buttonStyles();

@@ -1,0 +1,53 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $white;
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+}
+.link_button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    color: $textWhite;
+    font-size: 17px;
+
+    &:hover {
+        color: darken($color: $white, $amount: 10%);
+        svg {
+            stroke: darken($color: $white, $amount: 10%);
+        }
+    }
+}
+.link_svg {
+    stroke: none;
+    fill: none;
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+   
+}
+.contacts {
+    display: flex;
+    align-items: center;
+    @media (max-width: $tablet) {
+        grid-gap: 25px;
+        flex-direction: column;
+    }
+}
+.tell {
+    text-decoration: none;
+    list-style: none;
+    color: $textWhite;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    margin-right: 40px;
+}

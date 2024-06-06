@@ -1,35 +1,45 @@
-import classes from './button.module.scss'
 import { ForwardedRef, forwardRef } from 'react'
-import { ButtonProps } from '@shared/ui/Button/button-props'
 import clsx from 'clsx'
+import { ButtonProps } from '@shared/model/ButtonProps'
+import classes from './button.module.scss'
+import { buttonStyleClasses } from './buttonStyleClasses'
 
-
-const Button = forwardRef(({
-                             className,
-                             tag: Tag = 'button',
-                             theme = 'primary',
-                             buttonSize = 'small',
-                             radiusSize = 'large',
-                             fullWidth,
-                             ...props
-                           }: ButtonProps, ref: ForwardedRef<any>) => {
-  return (
-    <>
-      {/* @ts-ignore */}
-      <Tag
-      ref={ref}
-      className={clsx(
-        classes.button,
-        classes[theme],
-        classes['size-' + buttonSize],
-        classes['radius-' + radiusSize],
-        fullWidth && classes.fullWidth,
-        className,
-      )}
-      {...props}
-    /></>
-  )
-})
+const Button = forwardRef(
+  (
+    {
+      component: Component = 'button',
+      children,
+      className,
+      buttonSize = 'medium',
+      variant = 'contained',
+      radius = 'small',
+      bg = 'primary',
+      fullWidth,
+      ...props
+    }: ButtonProps,
+    ref: ForwardedRef<HTMLButtonElement | HTMLAnchorElement>,
+  ) => {
+    return (
+      <Component
+        ref={ref}
+        className={clsx(
+          classes.button,
+          buttonStyleClasses(classes, {
+            buttonSize,
+            bg,
+            fullWidth,
+            radius,
+            variant,
+          }),
+          className,
+        )}
+        {...(props as any)}
+      >
+        {children}
+      </Component>
+    )
+  },
+)
 
 Button.displayName = 'Button'
 
