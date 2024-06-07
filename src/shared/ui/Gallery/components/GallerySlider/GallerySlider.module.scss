@@ -1,0 +1,117 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+.GallerySlider {
+	position: absolute;
+	z-index: 2;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+.Swiper {
+	height: 440px !important;
+	margin-right: 80px !important;
+
+	@media (max-width: $desktopMedium) {
+		height: 352px !important;
+		margin-right: 40px !important;
+	}
+}
+
+.Slide {
+	width: 128px !important;
+	height: 128px !important;
+
+	@media (max-width: $desktopMedium) {
+		width: 104px !important;
+		height: 104px !important;
+	}
+}
+
+.Image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	cursor: pointer;
+	transition: all 250ms;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+
+	&:hover {
+		transform: scale(.97);
+	}
+}
+
+.Pagination {
+	position: absolute;
+	z-index: 2;
+	right: 40px !important;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@media (max-width: $desktopMedium) {
+		right: 16px !important;
+	}
+}
+
+.Bullet {
+	background: #fff;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 4px 0;
+	display: block;
+	cursor: pointer;
+}
+
+.BulletActive {
+	background: $primary;
+}
+
+.Navigation {
+	position: absolute;
+	top: 40px;
+	bottom: 40px;
+	right: 132px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 1;
+
+	@media (max-width: $desktopMedium) {
+		top: 14px;
+		bottom: 12px;
+		right: 84px;
+
+		svg {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+.Prev,
+.Next {
+	background: none;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		svg {
+			stroke: $primary;
+		}
+	}
+
+	svg {
+		stroke: #fff;
+	}
+}
