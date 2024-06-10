@@ -4,12 +4,11 @@
 $burgerColor: $primary;
 
 .burger {
-  $size: 21px;
+  $size: 48px;
   width: $size;
   height: $size;
-  // border: 2px solid $burgerColor;
-  // border-radius: 50%;
-  border: none;
+  border: 2px solid $burgerColor;
+  border-radius: 50%;
   display: none;
   background: none;
   position: relative;
@@ -83,10 +82,10 @@ $burgerColor: $primary;
 }
 
 .open {
-  $burgerColor: $textDark !important;
+  $burgerColor: #fff !important;
   border-color: $burgerColor;
   //position: absolute;
-  // z-index: 12;
+  z-index: 12;
 
   span {
     visibility: hidden;
@@ -111,7 +110,7 @@ $burgerColor: $primary;
 }
 
 .mainPage {
-  $burgerColor: $burgerColor;
+  $burgerColor: #000;
   border-color: $burgerColor;
 
   span {

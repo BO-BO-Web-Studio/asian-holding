@@ -43,9 +43,7 @@ function Contacts() {
           </a>
         </div>
       </div>
-      <div className={classes.lang_button} >
-        <LangButton />
-      </div>
+      <LangButton />
       <Button
         className={classes.button}
         // bg='secondary'
