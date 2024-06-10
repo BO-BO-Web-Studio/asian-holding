@@ -83,14 +83,7 @@
 .button {
   // margin-right: 20px;
 
-  @media (max-width: $desktopSmall) {
-    display: none;
+  @media (max-width: $desktop) {
     margin-right: 20px;
-  }
-}
-
-.lang_button {
-  @media (max-width: $tablet) {
-    display: none;
   }
 }
