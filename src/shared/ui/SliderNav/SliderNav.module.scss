@@ -1,0 +1,75 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+.Navigation {
+  // width: 84px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  grid-gap: 16px;
+  // justify-content: center;
+  // position: absolute;
+  // top: 50%;
+  // right: 0;
+  // transform: translateY(-50%);
+
+  // @media (min-width: $desktop) {
+  //   display: flex;
+  // }
+}
+
+.Light {
+  .Prev,
+  .Next {
+    svg {
+      stroke: $black;
+    }
+
+    &:hover:disabled {
+      svg {
+        stroke: #fff;
+      }
+    }
+  }
+}
+
+.Prev,
+.Next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 48px;
+  min-height: 48px;
+  background-color: $gray4;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    svg {
+      stroke: $primary;
+    }
+  }
+
+  &:hover:disabled {
+    svg {
+      stroke: $gray3;
+    }
+  }
+
+  svg {
+    transition: all 100ms;
+    // stroke: $text;
+    fill: none;
+    stroke: none;
+  }
+}
+
+.Prev {
+  // margin-right: 16px;
+}

@@ -1,0 +1,52 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+.footer {
+    display: flex;
+    grid-gap: 15px;
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+}
+.left {
+    flex: 1 1 35%;
+}
+
+.right {
+    flex: 1 1 60%;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 48px;
+
+    @media (max-width: $desktop) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+.item_title {
+    font-size: 17px;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 16px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.link {
+    font-size: 15px;
+    color: $gray50;
+    font-weight: 400;
+    text-decoration: none;
+}

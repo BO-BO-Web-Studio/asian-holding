@@ -1,0 +1,135 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+@import 'src/@app/styles/colors';
+@import 'menu-animation';
+
+.nav {
+  // flex-basis: 35%;
+  // flex-grow: 1;
+
+
+  @media (max-width: $desktopSmall) {
+    order: 3;
+    // flex-basis: auto;
+    // flex-grow: 0;
+  }
+}
+
+.mainPage {
+  .link {
+    // color: #fff;
+  }
+
+  .active {
+    color: $primary;
+  }
+}
+
+.menu {
+  @media (max-width: $desktopSmall) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $textDark;
+    padding: 40px;
+    opacity: 0;
+    transition: all 250ms;
+    pointer-events: none;
+    transform: translateX(100%);
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.button {
+  display: none !important;
+
+  @media (max-width: $tablet) {
+    display: inline-block !important;
+  }
+}
+
+.open {
+  @media (max-width: $desktopSmall) {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+
+    .item {
+      animation: {
+        name: menuAnimation;
+        fill-mode: forwards;
+        duration: 250ms;
+      }
+    }
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media (max-width: $desktopSmall) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+  }
+}
+
+.item {
+  margin-right: 28px;
+
+  @include animationDelayItems(4) {
+    @media (max-width: $tablet) {
+      @include from;
+    }
+  }
+
+  @media (max-width: $desktopSmall) {
+    margin: 0 0 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.link {
+  font-size: 15px;
+  line-height: 160%;
+  font-weight: 400;
+  transition: all 250ms;
+  color: $textDark;
+  text-decoration: none;
+
+  @media (max-width: $desktop) {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: $tablet) {
+    color: #fff;
+    font-size: 15px;
+    line-height: 32px;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.active {
+  color: $primary;
+}

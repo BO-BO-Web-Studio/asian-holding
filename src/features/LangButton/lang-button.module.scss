@@ -1,0 +1,44 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+.wrapper {
+  padding: 0;
+  margin: 0;
+  margin-right: 28px;
+
+  @media (max-width: $tablet) {
+    margin-right: 16px;
+  }
+}
+.lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 100%;
+  color: $textDark;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  
+
+  // @media (max-width: $desktopSmall) {
+  //   display: none;
+  // }
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: none;
+  margin-right: 8px;
+}
+
+.item {
+  display: flex;
+}
+
+.active {
+  display: none;
+}

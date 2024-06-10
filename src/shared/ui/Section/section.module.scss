@@ -1,0 +1,63 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+.section {
+  margin-bottom: 96px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 20px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 48px;
+
+  @media (max-width: $desktopSmall) {
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 28px;
+  }
+}
+
+.name {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  margin: 0 24px 0 0;
+  white-space: nowrap;
+  color: $textDark;
+
+  @media (max-width: $desktopSmall) {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 33px;
+    line-height: 40px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.buttonMore {
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+.wrapper {
+  padding-bottom: 48px;
+  border-bottom: 1px solid $gray2;
+}
