@@ -27,7 +27,7 @@ function GalleryMobile({
 	const [initialSlide, setInitialSlide] = useState<number | null>(null)
 
 	return (
-		<>
+		<div>
 			<GalleryModal
 				open={open}
 				pictures={images.map(({ url, id }) => ({ id, image: url }))}
@@ -35,17 +35,6 @@ function GalleryMobile({
 				activeId={initialSlide ?? undefined}
 			/>
 			<div className={classes.GalleryMobile}>
-				{/* <img
-					onClick={() => {
-						setOpen(true)
-						setInitialSlide(0)
-					}}
-					className={classes.Image}
-					src={image.url}
-					alt={image.title}
-					width={328}
-					height={200}
-				/> */}
 				<GalleryMobileSlider
 					onClick={(id) => {
 						setOpen(true)
@@ -54,7 +43,7 @@ function GalleryMobile({
 					images={images}
 				/>
 			</div>
-		</>
+		</div>
 	)
 }
 

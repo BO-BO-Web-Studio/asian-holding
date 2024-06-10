@@ -29,40 +29,49 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 	const image = images.find(({ id }) => id === activeId)!
 	
 
-	if (width < 1024) {
-		return (
-			<GalleryMobile
-				activeId={activeId}
-				onClick={setActiveId}
-				image={image}
-				images={images}
-				buttons={buttons}
-				id={id}
-			/>
-		)
-	}
+	// if (width < 1024) {
+	// 	return (
+			// <GalleryMobile
+			// 	activeId={activeId}
+			// 	onClick={setActiveId}
+			// 	image={image}
+			// 	images={images}
+			// 	buttons={buttons}
+			// 	id={id}
+			// />
+	// 	)
+	// }
 
 	return (
 		<div>
-			<GalleryModal
-				open={open}
-				pictures={images.map(({ url, id }) => ({ id, image: url }))}
-				close={() => setOpen(false)}
-				activeId={initialSlide ?? undefined}
-			/>
-				{<GallerySlider
-					onClick={(id) => {
-						// debugger
-						setOpen(true)
-						setActiveId(id)
-						setInitialSlide(images.findIndex((image) => image.id === id))
-						// setInitialSlide(333)
-						// console.log(activeId)
-						// debugger
-					}}
+			<div className={classes.mobile} >
+				<GalleryMobile
+					activeId={activeId}
+					onClick={setActiveId}
+					image={image}
 					images={images}
-				/>}
+					buttons={buttons}
+					id={id}
+				/>
 			</div>
+			<div className={classes.desktop} >
+				<GalleryModal
+					open={open}
+					pictures={images.map(({ url, id }) => ({ id, image: url }))}
+					close={() => setOpen(false)}
+					activeId={initialSlide ?? undefined}
+				/>
+					{<GallerySlider
+						onClick={(id) => {
+							setOpen(true)
+							setActiveId(id)
+							setInitialSlide(images.findIndex((image) => image.id === id))
+							// setInitialSlide(333)
+						}}
+						images={images}
+					/>}
+			</div>
+		</div>
 	)
 }
 
