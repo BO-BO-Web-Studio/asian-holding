@@ -29,22 +29,21 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 	const image = images.find(({ id }) => id === activeId)!
 	
 
-	if (width < 1024) {
-		return (
-			<GalleryMobile
-				activeId={activeId}
-				onClick={setActiveId}
-				image={image}
-				images={images}
-				buttons={buttons}
-				id={id}
-			/>
-		)
-	}
-
 	return (
 		<div>
-			<GalleryModal
+			
+			<div className={classes.mobile}>
+				<GalleryMobile
+					activeId={activeId}
+					onClick={setActiveId}
+					image={image}
+					images={images}
+					buttons={buttons}
+					id={id}
+				/>
+			</div>
+			{width > 1024 && <>
+				<GalleryModal
 				open={open}
 				pictures={images.map(({ url, id }) => ({ id, image: url }))}
 				close={() => setOpen(false)}
@@ -62,6 +61,7 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 					}}
 					images={images}
 				/>}
+				</>}
 			</div>
 	)
 }

@@ -120,3 +120,17 @@
 	bottom: 48px;
 	right: 48px;
 }
+
+.desktop {
+	display: block;
+	@media (max-width: $desktop) {
+		display: none;
+	}
+}
+
+.mobile {
+	display: none;
+	@media (max-width: $desktop) {
+		display: block;
+	}
+}
