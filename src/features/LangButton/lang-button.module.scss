@@ -6,8 +6,12 @@
   margin: 0;
   margin-right: 28px;
 
-  @media (max-width: $tablet) {
-    margin-right: 16px;
+  @media (max-width: $desktopSmall) {
+    margin-right: 0;
+    background-color: $gray4;
+    padding: 8px;
+    border-radius: 4px;
+    overflow: hidden;
   }
 }
 .lang {
@@ -21,7 +25,7 @@
   background-color: transparent;
   cursor: pointer;
   text-decoration: none;
-  
+
 
   // @media (max-width: $desktopSmall) {
   //   display: none;
