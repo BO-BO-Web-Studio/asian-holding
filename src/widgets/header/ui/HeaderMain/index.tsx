@@ -1,5 +1,4 @@
 'use client'
-import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
@@ -7,9 +6,9 @@ import { Wrapper } from '@shared/ui/Wrapper'
 import { Contacts } from '@widgets/header/ui/Contacts'
 import { Navigation } from '@widgets/header/ui/Navigation'
 import classes from './headerMain.module.scss'
-// import { ModalContent } from '@widgets/modal'
 import { useState } from 'react'
 import { Modal } from '@shared/ui/Modal'
+import { useMenuStore } from '@widgets/header/model/menuStore'
 
 function HeaderMain() {
   const pathname = usePathname()
