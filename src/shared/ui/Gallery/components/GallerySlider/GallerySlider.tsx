@@ -2,10 +2,11 @@
 import classes from './GallerySlider.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import { Navigation, Pagination } from 'swiper'
+import { Navigation, Pagination } from 'swiper/modules'
 import { HandySvg } from 'handy-svg'
-import { IImage } from '@interfaces/IImage'
-import { Placemark } from '@pbe/react-yandex-maps';
+import { IImage } from '@shared/model/IImage'
+import SliderNav from '@shared/ui/SliderNav/SliderNav'
+import clsx from 'clsx'
 
 interface GallerySliderProps {
 	images: IImage[]
@@ -13,26 +14,24 @@ interface GallerySliderProps {
 }
 
 function GallerySlider({ images, onClick }: GallerySliderProps) {
-	// debugger
+
 	return (
-		<>
 			<div className={classes.GallerySlider}>
 				<Swiper
 					className={classes.Swiper}
-					direction="vertical"
 					pagination={{
 						enabled: true,
 						clickable: true,
 						el: '#gallery-pagination',
-						bulletClass: classes.Bullet,
-						bulletActiveClass: classes.BulletActive
+						bulletClass: 'slider-custom-pagination-bullet',
+						bulletActiveClass: 'slider-custom-pagination-bullet-active',
 					}}
 					navigation={{
 						enabled: true,
 						nextEl: '#gallery-nav-next',
 						prevEl: '#gallery-nav-prev',
 					}}
-					slidesPerView={3}
+					slidesPerView={1}
 					spaceBetween={28}
 					modules={[Pagination, Navigation]}
 					breakpoints={{
@@ -51,42 +50,41 @@ function GallerySlider({ images, onClick }: GallerySliderProps) {
 						>
 							<img
 								className={classes.Image}
-								onClick={() => onClick(id)}
 								src={url}
 								alt={title}
 								width={128}
 								height={128}
 							/>
+							<button 
+								className={classes.show_button} 
+								onClick={() => onClick(id)}
+								>
+								<HandySvg 
+									src='/assets/icons/show-image.svg' 
+									width={18}
+									height={18}
+									alt='show'
+									/>
+							</button>
 						</SwiperSlide>
 					))}
 				</Swiper>
-			</div>
-			<div id="gallery-pagination" className={classes.Pagination} />
-			<div className={classes.Navigation}>
-				<button
-					id="gallery-nav-prev"
-					className={classes.Prev}
-					aria-label="Предыдущий"
-				>
-					<HandySvg
-						src="/assets/icons/chevron-up.svg"
-						width={24}
-						height={24}
-					/>
-				</button>
-				<button
-					id="gallery-nav-next"
-					className={classes.Next}
-					aria-label="Следующий"
-				>
-					<HandySvg
-						src="/assets/icons/chevron-down.svg"
-						width={24}
-						height={24}
-					/>
-				</button>
-			</div>
-		</>
+				<div className={classes.Navigation} >
+					<SliderNav  
+						className={classes.nav_buttons}
+						prevId="gallery-nav-prev"
+						nextId="gallery-nav-next"
+						theme='light'
+						/>
+				</div>
+				<div id={'gallery-pagination'}  
+					className={clsx(
+					"slider-custom-pagination",
+					"slider-custom-pagination-light",
+					classes.bullets
+					)} >
+				</div>
+			</div>			
 	)
 }
 

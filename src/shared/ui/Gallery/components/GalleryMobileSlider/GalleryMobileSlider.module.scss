@@ -1,5 +1,5 @@
-@import "src/styles/variables";
-@import "src/styles/mixins";
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
 
 .List {
 	// list-style: none;
@@ -17,7 +17,7 @@
 
 
 .Item_main_slide {
-	padding-bottom: 15px;
+	// padding-bottom: 15px;
 }
 
 .Item_main {

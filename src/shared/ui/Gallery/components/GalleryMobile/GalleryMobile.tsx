@@ -1,11 +1,11 @@
 import classes from './GalleryMobile.module.scss'
-import { GalleryProps } from '@ui/Gallery/components/Gallery/Gallery'
-import { IGallery } from '@ui/Gallery'
+import { GalleryProps } from '../Gallery/Gallery'
+import { IGallery } from '../../interfaces/IGallery'  
 import { Swiper, SwiperSlide } from 'swiper/react'
-import GalleryMobileSlider from '@ui/Gallery/components/GalleryMobileSlider/GalleryMobileSlider'
-import Wrapper from '@ui/Wrapper/Wrapper'
+import GalleryMobileSlider from '../GalleryMobileSlider/GalleryMobileSlider' 
+import { Wrapper } from '@shared/ui/Wrapper' 
 import { HandySvg } from 'handy-svg'
-import GalleryModal from '@ui/GalleryModal'
+import GalleryModal from '@shared/ui/GalleryModal' 
 import { useState } from 'react'
 import clsx from 'clsx'
 
@@ -19,10 +19,7 @@ function GalleryMobile({
 	activeId,
 	onClick,
 	images,
-	address,
 	image,
-	name,
-	views,
 	buttons
 }: GalleryMobileProps) {
 	const [open, setOpen] = useState(false)
@@ -30,7 +27,7 @@ function GalleryMobile({
 	const [initialSlide, setInitialSlide] = useState<number | null>(null)
 
 	return (
-		<Wrapper className={classes.wrapper} >
+		<>
 			<GalleryModal
 				open={open}
 				pictures={images.map(({ url, id }) => ({ id, image: url }))}
@@ -55,45 +52,9 @@ function GalleryMobile({
 						setInitialSlide(images.findIndex((image) => image.id === id))
 					}}
 					images={images}
-					
 				/>
 			</div>
-			<div className={classes.Info}>
-				<h1 className={classes.Title}>{name}</h1>
-				<div className={classes.buttons_wrapper} >
-					<div className={classes.buttons}>
-						<div 
-						className={clsx(
-							classes.address_button,
-							addressOpen && classes.open
-						)} 
-						onClick={() => setAddressOpen(!addressOpen)}
-						 >
-							<HandySvg
-								src="/assets/icons/map-pin-bold.svg"
-								width={16}
-								height={16}
-							/>
-							<p className={classes.Address}>
-								{address}
-							</p>
-						</div>
-						<div className={classes.views_button} >
-							<HandySvg
-								src="/assets/icons/views.svg"
-								width={16}
-								height={16}
-							/>
-							<p className={classes.views}>
-								{views}
-							</p>
-						</div>
-
-						{buttons}
-					</div>
-				</div>
-			</div>
-		</Wrapper>
+		</>
 	)
 }
 

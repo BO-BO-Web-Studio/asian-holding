@@ -1,5 +1,5 @@
-@import 'src/styles/variables';
-@import 'src/styles/mixins';
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
 
 .Gallery {
 	height: 540px;
@@ -42,7 +42,7 @@
 	left: 48px;
 	right: 280px;
 
-	@media (max-width: $desktopMedium) {
+	@media (max-width: $desktop) {
 		bottom: 40px;
 		left: 40px;
 		right: 208px;
@@ -58,7 +58,7 @@
 	align-items: center;
 
 	&:first-child svg {
-		stroke: $red;
+		stroke: $primary;
 		margin-right: 8px;
 	}
 
@@ -66,7 +66,7 @@
 		margin-right: 8px;
 	}
 
-	@media (max-width: $desktopMedium) {
+	@media (max-width: $desktop) {
 		font-size: 11px;
 		line-height: 16px;
 		letter-spacing: 0.4px;
@@ -87,7 +87,7 @@
 .Buttons {
 	margin-top: 24px;
 
-	// @media (max-width: $desktopMedium) {
+	// @media (max-width: $desktop) {
 	// 	margin-top: 24px;
 	// }
 }
@@ -100,7 +100,7 @@
 	color: #fff;
 	margin: 0 0 12px;
 
-	@media (max-width: $desktopMedium) {
+	@media (max-width: $desktop) {
 		font-size: 28px;
 		line-height: 32px;
 		margin-bottom: 12px;
@@ -109,7 +109,7 @@
 
 .button_text {
 	cursor: pointer;
-	background: $spaceGray;
+	background: $gray2;
 	padding: 12px 16px;
 	border-radius: 8px;
 	font-size: 11px;
@@ -120,4 +120,3 @@
 	bottom: 48px;
 	right: 48px;
 }
-

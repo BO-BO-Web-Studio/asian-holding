@@ -18,8 +18,8 @@ function SliderNav({theme = 'dark', prevId, nextId, className}: SliderNavProps) 
       >
         <HandySvg
           src="/assets/icons/arrow-left.svg"
-          width={6}
-          height={12}
+          width={12}
+          height={13}
           alt={'left'}
         />
       </button>
@@ -29,8 +29,8 @@ function SliderNav({theme = 'dark', prevId, nextId, className}: SliderNavProps) 
       >
         <HandySvg
           src="/assets/icons/arrow-right.svg"
-          width={6}
-          height={12}
+          width={12}
+          height={13}
           alt={'right'}
         />
       </button>

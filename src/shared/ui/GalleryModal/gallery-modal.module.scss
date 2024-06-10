@@ -1,5 +1,5 @@
-@import "src/styles/variables";
-@import "src/styles/mixins";
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
 
 .modal {
   position: fixed;
@@ -69,6 +69,12 @@
   display: block;
   margin: auto;
   background: #cccccc;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @media (max-width: $tablet) {
+    border-radius: 4px;
+  }
 }
 
 .pagination {
@@ -87,12 +93,14 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #000;
+  background: $gray2;
   margin: 0 4px;
 }
 
 .bulletActive {
   background: $primary;
+  width: 10px;
+  height: 10px;
 }
 
 .navigation {
@@ -121,6 +129,7 @@
   pointer-events: auto;
 
   svg {
-    stroke: #fff;
+    stroke: $white ;
+    fill: none;
   }
 }

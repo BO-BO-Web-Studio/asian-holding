@@ -1,11 +1,11 @@
 'use client'
 import classes from './gallery-modal.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper'
+import { Navigation, Pagination } from 'swiper/modules'
 import Image from 'next/image'
 import { HandySvg } from 'handy-svg'
 import { AnimatePresence, motion } from 'framer-motion'
-import { IGalleryPicture } from '@ui/GalleryModal/IGalleryPicture'
+import { IGalleryPicture } from './IGalleryPicture'
 
 interface Props {
 	open: boolean
@@ -29,7 +29,7 @@ function GalleryModal({ open, close, pictures, activeId }: Props) {
 					aria-label="Закрыть"
 				>
 					<HandySvg
-						src="/assets/icons/close-l.svg"
+						src="/assets/icons/closed.svg"
 						width={24}
 						height={24}
 					/>
@@ -91,9 +91,9 @@ function GalleryModal({ open, close, pictures, activeId }: Props) {
 							aria-label="Пред. изображение"
 						>
 							<HandySvg
-								src="/assets/icons/chevron-left.svg"
-								width={48}
-								height={48}
+								src="/assets/icons/arrow-left.svg"
+								width={24}
+								height={24}
 							/>
 						</button>
 						<button
@@ -102,9 +102,9 @@ function GalleryModal({ open, close, pictures, activeId }: Props) {
 							aria-label="След. изображение"
 						>
 							<HandySvg
-								src="/assets/icons/chevron-right.svg"
-								width={48}
-								height={48}
+								src="/assets/icons/arrow-right.svg"
+								width={24}
+								height={24}
 							/>
 						</button>
 					</div>

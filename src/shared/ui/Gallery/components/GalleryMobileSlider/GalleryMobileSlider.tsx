@@ -1,5 +1,5 @@
 import classes from './GalleryMobileSlider.module.scss'
-import { IGallery } from '@ui/Gallery'
+import { IGallery } from '../../interfaces/IGallery'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { ReactNode, useRef, useState } from 'react';
 import 'swiper/css';
@@ -7,8 +7,8 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
-// import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import { type Swiper as SwiperTypes, FreeMode, Navigation, Thumbs, Pagination } from "swiper";
+import { FreeMode, Navigation, Thumbs, Pagination } from 'swiper/modules';
+import { type Swiper as SwiperTypes } from "swiper";
 
 
 
@@ -60,39 +60,6 @@ function GalleryMobileSlider({ images, onClick, buttonChildren }: GalleryMobileS
 					</SwiperSlide>
 				))}
 			</Swiper>
-			{/* <Swiper
-				onSwiper={setSwiperInstance}
-				spaceBetween={16}
-				slidesPerView={4}
-				freeMode={true}
-				watchSlidesProgress={true}
-				// navigation={true}
-				modules={[FreeMode, Thumbs]}
-				className={classes.mySwiper}
-			>
-				{images.map(({ id, url, title }) => (
-					<SwiperSlide
-						key={id}
-						className={classes.Item}
-					>
-						<img
-							className={classes.Image}
-							// onClick={(event) => {
-							// 	onClick(id)
-							// 	const target: any = event.currentTarget
-							// 	target.scrollIntoView({
-							// 		behavior: 'smooth',
-							// 		block: 'nearest'
-							// 	})
-							// }}
-							src={url}
-							alt={title}
-							width={116}
-							height={116}
-						/>
-					</SwiperSlide>
-				))}
-			</Swiper> */}
 		</div>
 	)
 }

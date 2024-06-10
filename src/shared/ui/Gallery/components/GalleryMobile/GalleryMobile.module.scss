@@ -1,9 +1,9 @@
-@import "src/styles/variables";
-@import "src/styles/mixins";
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
 
 .wrapper {
-	padding: 0;
-	margin: 0 -16px;
+	// padding: 0;
+	// margin: 0 -16px;
 }
 
 .GalleryMobile {
@@ -48,7 +48,7 @@
 .buttons_wrapper {
 	overflow: auto;
 	padding-bottom: 10px;
-	border-bottom: 1px solid $spaceGray;
+	border-bottom: 1px solid $gray2;
 }
 
 .buttons {
@@ -63,7 +63,7 @@
 	justify-content: center;
 	align-items: center;
 	padding: 8px;
-	background-color: $spaceGray;
+	background-color: $gray2;
 	border-radius: 8px;
 	overflow: hidden;
 	grid-gap: 8px;
@@ -75,7 +75,7 @@
 	}
 
 	svg {
-		stroke: $red;
+		stroke: $primary;
 		// margin-right: 8px;
 	}
 }
@@ -90,7 +90,7 @@
 	justify-content: center;
 	align-items: center;
 	padding: 8px;
-	background-color: $spaceGray;
+	background-color: $gray2;
 	border-radius: 8px;
 	grid-gap: 8px;
 
@@ -105,7 +105,7 @@
 
 	p {
 		font-size: 11px;
-		color: $text;
+		color: $textDark;
 		font-weight: 700;
 	}
 }
@@ -114,11 +114,11 @@
 	font-size: 11px;
 	line-height: 16px;
 	letter-spacing: 0.4px;
-	color: $text2;
+	color: $textDark2;
 	display: inline-flex;
 	align-items: center;
 	font-weight: 700;
-	color: $text;
+	color: $textDark;
 	width: 124px;
 	@include lineclamp(1);
 	// margin: 0 0 16px;
@@ -129,7 +129,7 @@
 	font-weight: 700;
 	font-size: 24px;
 	line-height: 28px;
-	color: $text;
+	color: $textDark;
 	margin: 0;
 	margin-bottom: 12px;
 

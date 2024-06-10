@@ -2,32 +2,33 @@
 @import 'src/@app/styles/mixins';
 
 .GallerySlider {
-	position: absolute;
+	position: relative;
+	// position: absolute;
 	z-index: 2;
-	right: 0;
-	top: 50%;
-	transform: translateY(-50%);
+	// right: 0;
+	// top: 50%;
+	// transform: translateY(-50%);
 }
 
 
 .Swiper {
-	height: 440px !important;
-	margin-right: 80px !important;
+	// height: 440px !important;
+	// margin-right: 80px !important;
 
-	@media (max-width: $desktopMedium) {
-		height: 352px !important;
-		margin-right: 40px !important;
-	}
+	// @media (max-width: $desktop) {
+	// 	height: 352px !important;
+	// 	margin-right: 40px !important;
+	// }
 }
 
 .Slide {
-	width: 128px !important;
-	height: 128px !important;
+	// width: 128px !important;
+	height: 620px !important;
 
-	@media (max-width: $desktopMedium) {
-		width: 104px !important;
-		height: 104px !important;
-	}
+	// @media (max-width: $desktop) {
+	// 	width: 104px !important;
+	// 	height: 104px !important;
+	// }
 }
 
 .Image {
@@ -35,15 +36,15 @@
 	height: 100%;
 	display: block;
 	object-fit: cover;
-	cursor: pointer;
+	// cursor: pointer;
 	transition: all 250ms;
 	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
 
-	&:hover {
-		transform: scale(.97);
-	}
+	// &:hover {
+	// 	transform: scale(.97);
+	// }
 }
 
 .Pagination {
@@ -56,7 +57,7 @@
 	flex-direction: column;
 	justify-content: center;
 
-	@media (max-width: $desktopMedium) {
+	@media (max-width: $desktop) {
 		right: 16px !important;
 	}
 }
@@ -78,26 +79,32 @@
 
 .Navigation {
 	position: absolute;
-	top: 40px;
-	bottom: 40px;
-	right: 132px;
+	top: 50%;
+	right: 0px;
+	transform: translate(0%, -50%);
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	z-index: 1;
+	box-sizing: border-box;
+	padding: 0 48px;
 
-	@media (max-width: $desktopMedium) {
-		top: 14px;
-		bottom: 12px;
-		right: 84px;
+	// @media (max-width: $desktop) {
+	// 	top: 14px;
+	// 	bottom: 12px;
+	// 	right: 84px;
 
-		svg {
-			width: 16px;
-			height: 16px;
-		}
-	}
+	// 	svg {
+	// 		width: 16px;
+	// 		height: 16px;
+	// 	}
+	// }
 }
-
+.nav_buttons  {
+	display: flex;
+	justify-content: space-between;
+}
 .Prev,
 .Next {
 	background: none;
@@ -107,7 +114,7 @@
 
 	&:hover {
 		svg {
-			stroke: $primary;
+			stroke: $primary; 
 		}
 	}
 
@@ -115,3 +122,34 @@
 		stroke: #fff;
 	}
 }
+
+.show_button {
+	z-index: 1;
+	position: absolute;
+	top: 48px;
+	right: 48px;
+	width: 48px;
+	height: 48px;
+	cursor: pointer;
+	// padding: 18px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $gray4;
+
+}
+
+.bullets {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(0%, -50%);
+	width: 100%;
+	height: max-content;
+	z-index: 1;
+	margin-bottom: 15px;
+}
+
