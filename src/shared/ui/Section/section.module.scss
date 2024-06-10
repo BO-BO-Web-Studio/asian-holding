@@ -2,18 +2,14 @@
 @import 'src/@app/styles/mixins';
 
 .section {
-  margin: 60px 0;
-
-  @media (max-width: $desktopSmall) {
-    margin: 96px 0;
-  }
+  margin-bottom: 96px;
 
   @media (max-width: $tablet) {
-    margin: 66px 0;
+    margin-bottom: 36px;
   }
 
   @media (max-width: $mobileLarge) {
-    margin: 40px 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -21,10 +17,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 60px;
+  margin: 0 0 48px;
 
   @media (max-width: $desktopSmall) {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
   @media (max-width: $mobileLarge) {
@@ -38,7 +34,7 @@
   line-height: 40px;
   margin: 0 24px 0 0;
   white-space: nowrap;
-  color: $gray;
+  color: $textDark;
 
   @media (max-width: $desktopSmall) {
     font-size: 28px;
@@ -60,4 +56,8 @@
   @media (max-width: $tablet) {
     display: none;
   }
+}
+.wrapper {
+  padding-bottom: 48px;
+  border-bottom: 1px solid $gray2;
 }

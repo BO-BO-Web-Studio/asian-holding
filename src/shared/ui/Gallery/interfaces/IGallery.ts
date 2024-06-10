@@ -1,4 +1,4 @@
-export interface IImage {
+export interface IGallery {
   id: number
   title: string
   url: string
