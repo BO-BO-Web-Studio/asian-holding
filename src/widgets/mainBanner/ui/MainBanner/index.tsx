@@ -82,10 +82,11 @@ export const MainBanner = () => {
         </Swiper>
             <div className={classes.bottom} >
                 <SliderNav 
+                className={classes.nav}
                 prevId="main-banner-prev"
                 nextId="main-banner-next"
                 theme='light'
-                />
+                >
                 <div id={'bullet-main-banner'}  
                     className={clsx(
                     "slider-custom-pagination",
@@ -93,6 +94,7 @@ export const MainBanner = () => {
                     classes.bullets
                     )} >
                 </div>
+                </SliderNav>
             </div>
         </div>
     </Wrapper>
