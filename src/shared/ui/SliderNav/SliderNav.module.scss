@@ -4,6 +4,9 @@
 .Navigation {
   // width: 84px;
   display: flex;
+  align-items: center;
+  width: auto;
+  grid-gap: 16px;
   // justify-content: center;
   // position: absolute;
   // top: 50%;
@@ -35,8 +38,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
-  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   background-color: $gray4;
   border-radius: 50%;
   overflow: hidden;
@@ -68,5 +71,5 @@
 }
 
 .Prev {
-  margin-right: 16px;
+  // margin-right: 16px;
 }

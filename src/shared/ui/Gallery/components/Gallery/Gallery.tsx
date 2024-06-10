@@ -42,26 +42,26 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 					id={id}
 				/>
 			</div>
-			{width > 1024 && <>
+			<div className={classes.desktop} >
 				<GalleryModal
-				open={open}
-				pictures={images.map(({ url, id }) => ({ id, image: url }))}
-				close={() => setOpen(false)}
-				activeId={initialSlide ?? undefined}
-			/>
-				{<GallerySlider
-					onClick={(id) => {
-						// debugger
-						setOpen(true)
-						setActiveId(id)
-						setInitialSlide(images.findIndex((image) => image.id === id))
-						// setInitialSlide(333)
-						// console.log(activeId)
-						// debugger
-					}}
-					images={images}
-				/>}
-				</>}
+					open={open}
+					pictures={images.map(({ url, id }) => ({ id, image: url }))}
+					close={() => setOpen(false)}
+					activeId={initialSlide ?? undefined}
+				/>
+					{<GallerySlider
+						onClick={(id) => {
+							// debugger
+							setOpen(true)
+							setActiveId(id)
+							setInitialSlide(images.findIndex((image) => image.id === id))
+							// setInitialSlide(333)
+							// console.log(activeId)
+							// debugger
+						}}
+						images={images}
+					/>}
+			</div>
 			</div>
 	)
 }
