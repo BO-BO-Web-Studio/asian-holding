@@ -1,6 +1,7 @@
 import classes from './burger.module.scss'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
+
 import { useMenuStore } from '@widgets/header/model/menuStore'
 
 function Burger() {

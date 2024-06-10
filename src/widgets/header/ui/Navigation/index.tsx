@@ -96,7 +96,8 @@ function Navigation({ setModal, isOpenModal }: Props) {
           close={setModal}
           isShowCloseButton={true}
         >
-          <h1>Hello</h1>
+          <h1>Hel
+          </h1>
           {/* <ModalContent> */}
           {/* <ApplicationForm /> */}
           {/* </ModalContent> */}

@@ -42,7 +42,7 @@ function HeaderMain() {
             close={setModal}
             isShowCloseButton={true}
           >
-            <h1>Hello</h1>
+            <h1>Hell</h1>
           </Modal>
         </div>
       </Wrapper>

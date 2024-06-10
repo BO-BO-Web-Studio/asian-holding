@@ -2,9 +2,6 @@ import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import classes from './contacts.module.scss'
 import { HandySvg } from 'handy-svg'
-
-// import useTranslation from 'next-translate/useTranslation';
-
 import { useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 import { Button } from '@shared/ui/Button'
