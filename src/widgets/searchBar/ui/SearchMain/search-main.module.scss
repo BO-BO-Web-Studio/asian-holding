@@ -54,10 +54,10 @@
         grid-column-start: 1;
         grid-column-end: 3;
     }
+}
+.button {
     @media (max-width: $tablet) {
-        .button {
-            width: 100%;
-        }
+        width: 100% 
     }
 }
 .title {

@@ -20,7 +20,7 @@ function HeaderMain() {
   }
 
   return (
-    <div className={clsx(pathname === '/' && classes.mainPage)}>
+    <div className={classes.mainPage}>
       <Wrapper className={classes.wrapper}>
         <div className={classes.block}>
           <div className={classes.header_left} >
