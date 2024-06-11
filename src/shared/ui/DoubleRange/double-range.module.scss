@@ -71,7 +71,7 @@
     display: flex;
     padding: 16px 20px; 
     @media (max-width: $desktop) {
-      justify-content: center;
+      justify-content: space-around;
     }
   }
   .item {
@@ -90,7 +90,7 @@
     margin: 0;
     text-wrap: nowrap;
     @media (max-width: $tablet) {
-      font-size: 11px;
+      font-size: 13px;
     }
   }
   .span {

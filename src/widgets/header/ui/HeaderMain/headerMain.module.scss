@@ -2,15 +2,9 @@
 @import 'src/@app/styles/mixins';
 
 .mainPage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-
-  .block {
-    border: none;
-  }
+  background-color: $white;
+  width: 100%;
+  border-bottom: 1px solid $gray3;
 }
 
 .block {
@@ -18,7 +12,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  border-bottom: 1px solid $gray3;
 
   @media (max-width: $tablet) {
     padding: 18px 0;

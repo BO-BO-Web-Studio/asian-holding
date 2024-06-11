@@ -130,7 +130,7 @@ export const SearchMain = () => {
         />
     </div>
     <div className={classes.bl_button} >
-        <Button 
+        <Button
             buttonSize='large'
             component={Link}
             href={getQuery()}

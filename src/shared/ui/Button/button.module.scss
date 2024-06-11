@@ -34,7 +34,7 @@
       min-height: 56px;
 
       @media (max-width: $tablet) {
-        font-size: 15px;
+        font-size: 13px;
         line-height: 24px;
         padding: 12px 32px;
       }
@@ -47,11 +47,17 @@
       padding: 12px 51px;
     }
 
+    &-medium {
+      @media (max-width: $tablet) {
+        font-size: 13px;
+      }
+    }
     &-small {
       padding: 12px 20px;
 
       @media (max-width: $tablet) {
         padding: 8px 16px;
+
       }
     }
   }
