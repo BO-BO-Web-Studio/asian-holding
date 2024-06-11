@@ -19,7 +19,7 @@ function Portal({children, isOpen, rootId}: Props) {
     return null
   }
 
-  // return isMounted() ? createPortal(children, modalRoot!) : null
+  return isMounted() ? createPortal(children, modalRoot!) : null
 }
 
 export { Portal }
