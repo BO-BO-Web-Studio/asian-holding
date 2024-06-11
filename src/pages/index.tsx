@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Header } from "@widgets/header";
 import { MainBanner } from "@widgets/mainBanner";
 import { PhotoGallery } from "@widgets/photoGallery";
+import { SearchBar } from "@widgets/searchBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <MainBanner />
       <PhotoGallery />
+      <SearchBar />
     </>
   );
 }
