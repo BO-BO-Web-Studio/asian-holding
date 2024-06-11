@@ -1,0 +1,17 @@
+@import 'src/@app/styles/variables';
+@import 'src/@app/styles/mixins';
+
+.body {
+    display: flex;
+    width: 100%;
+    grid-gap: 24px;
+}
+
+.item_dropdown_1 {
+    max-width: 240px;
+    width: 100%;
+}
+.item_dropdown_2 {
+    width: 100%;
+    max-width: 200px;
+}

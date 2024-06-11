@@ -2,6 +2,7 @@ import classes from './section.module.scss'
 import { HTMLAttributes, ReactNode } from 'react'
 import clsx from 'clsx'
 import { Wrapper } from '@shared/ui/Wrapper'
+import Divider from '../Divider/Divider'
 
 interface Props extends HTMLAttributes<HTMLElement> {
   name: ReactNode
@@ -50,6 +51,7 @@ function Section({
           >{buttonMore}</div>
         </header>
         {children}
+        <div className={classes.divider} ></div>
       </Wrapper>
     </section>
   )
