@@ -48,7 +48,8 @@ function Section({
           <div
             {...buttonMoreProps}
             className={clsx(classes.buttonMore, buttonMoreProps?.className)}
-          >{buttonMore}</div>
+          >{buttonMore}
+          </div>
         </header>
         {children}
         <div className={classes.divider} ></div>

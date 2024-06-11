@@ -29,7 +29,7 @@ function GalleryModal({ open, close, pictures, activeId }: Props) {
 					aria-label="Закрыть"
 				>
 					<HandySvg
-						src="/assets/icons/closed.svg"
+						src="/assets/icons/close.svg"
 						width={24}
 						height={24}
 					/>
