@@ -41,6 +41,7 @@ function GalleryMobile({
 						setInitialSlide(images.findIndex((image) => image.id === id))
 					}}
 					images={images}
+					buttonChildren={buttons}
 				/>
 			</div>
 		</div>

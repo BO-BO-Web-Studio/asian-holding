@@ -51,13 +51,9 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 				/>
 					{<GallerySlider
 						onClick={(id) => {
-							// debugger
 							setOpen(true)
 							setActiveId(id)
 							setInitialSlide(images.findIndex((image) => image.id === id))
-							// setInitialSlide(333)
-							// console.log(activeId)
-							// debugger
 						}}
 						images={images}
 					/>}

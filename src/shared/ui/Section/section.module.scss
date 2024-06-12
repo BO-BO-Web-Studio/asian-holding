@@ -5,12 +5,12 @@
   margin-bottom: 96px;
 
   @media (max-width: $tablet) {
-    margin-bottom: 36px;
+    margin-bottom: 62px;
   }
 
-  @media (max-width: $mobileLarge) {
-    margin-bottom: 20px;
-  }
+  // @media (max-width: $mobileLarge) {
+  //   margin-bottom: 20px;
+  // }
 }
 
 .header {
@@ -62,4 +62,8 @@
   width: 100%;
   height: 1px;
   background-color: $gray2;
+
+  @media (max-width: $tablet) {
+    margin-top: 24px;
+  }
 }

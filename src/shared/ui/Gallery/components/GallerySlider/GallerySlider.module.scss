@@ -3,32 +3,13 @@
 
 .GallerySlider {
 	position: relative;
-	// position: absolute;
 	z-index: 2;
-	// right: 0;
-	// top: 50%;
-	// transform: translateY(-50%);
 }
 
-
-.Swiper {
-	// height: 440px !important;
-	// margin-right: 80px !important;
-
-	// @media (max-width: $desktop) {
-	// 	height: 352px !important;
-	// 	margin-right: 40px !important;
-	// }
-}
 
 .Slide {
-	// width: 128px !important;
 	height: 620px !important;
 
-	// @media (max-width: $desktop) {
-	// 	width: 104px !important;
-	// 	height: 104px !important;
-	// }
 }
 
 .Image {
@@ -36,15 +17,10 @@
 	height: 100%;
 	display: block;
 	object-fit: cover;
-	// cursor: pointer;
 	transition: all 250ms;
 	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
-
-	// &:hover {
-	// 	transform: scale(.97);
-	// }
 }
 
 .Pagination {
@@ -89,17 +65,6 @@
 	z-index: 1;
 	box-sizing: border-box;
 	padding: 0 48px;
-
-	// @media (max-width: $desktop) {
-	// 	top: 14px;
-	// 	bottom: 12px;
-	// 	right: 84px;
-
-	// 	svg {
-	// 		width: 16px;
-	// 		height: 16px;
-	// 	}
-	// }
 }
 .nav_buttons  {
 	display: flex;
@@ -131,7 +96,6 @@
 	width: 48px;
 	height: 48px;
 	cursor: pointer;
-	// padding: 18px;
 	border-radius: 50%;
 	overflow: hidden;
 	border: none;

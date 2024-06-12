@@ -4,21 +4,12 @@
 @import 'menu-animation';
 
 .nav {
-  // flex-basis: 35%;
-  // flex-grow: 1;
-
-
   @media (max-width: $desktopSmall) {
     order: 3;
-    // flex-basis: auto;
-    // flex-grow: 0;
   }
 }
 
 .mainPage {
-  .link {
-    // color: #fff;
-  }
 
   .active {
     color: $primary;
@@ -29,7 +20,6 @@
   @media (max-width: $desktopSmall) {
     position: fixed;
     top: 0;
-    // left: 0;
     bottom: 0;
     right: 0;
     background: $white;
@@ -41,7 +31,6 @@
     z-index: 11;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
   }
 
 
@@ -83,7 +72,7 @@
 
   @media (max-width: $desktopSmall) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 20px;
     padding-top: 16px;
     padding-bottom: 16px;
@@ -157,9 +146,6 @@
   display: none;
   text-decoration: none;
   align-items: center;
-  // border-right: 1px solid $gray3;
-  // padding-right: 24px;
-  // margin-right: 24px;
 
   @media (max-width: $desktopSmall) {
     display: flex;
@@ -177,10 +163,7 @@
   width: 24px;
   height: 24px;
   margin-right: 8px;
-  // border: 1px solid red;
-  // border-radius: 50%;
-  // margin-right: 12px;
-
+  
   svg {
     fill: none;
   }

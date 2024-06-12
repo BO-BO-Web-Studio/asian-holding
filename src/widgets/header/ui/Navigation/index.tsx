@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Burger } from '@widgets/header/ui/Burger'
@@ -7,8 +6,6 @@ import { useMenuStore } from '@widgets/header/model/menuStore'
 import classes from './navigation.module.scss'
 import useLockBodyScroll from '@custom-react-hooks/use-lock-body-scroll'
 import { Button } from '@shared/ui/Button'
-import { useState } from 'react'
-// import { ModalContent } from '@widgets/modal'
 import useTranslation from 'next-translate/useTranslation';
 import { menuList } from '@widgets/header/consts/menuList'
 import { Modal } from '@shared/ui/Modal'
