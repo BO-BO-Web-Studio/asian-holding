@@ -47,11 +47,11 @@
 .contacts {
     display: flex;
     align-items: center;
-    width: 100%;
     @media (max-width: $tablet) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 5px;
+        width: 100%;
     }
 }
 .tell {

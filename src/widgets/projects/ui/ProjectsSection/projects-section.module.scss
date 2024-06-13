@@ -9,13 +9,13 @@
     box-sizing: border-box;
 
     @media (max-width: $desktop) {
-        grid-template-columns: 1fr 1fr;;
+        // grid-template-columns: 1fr 1fr;;
         grid-gap: 30px;
     }
 }
 
 .item:nth-child(1) {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    box-sizing: border-box;
+    // grid-column-start: 1;
+    // grid-column-end: 3;
+    // box-sizing: border-box;
 }

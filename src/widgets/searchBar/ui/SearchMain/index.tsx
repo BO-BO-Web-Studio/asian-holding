@@ -7,7 +7,38 @@ import { RadioItems } from '@shared/ui/RadioItems'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useSearchStore } from '@widgets/searchBar/model/searchStore'
-
+const complexData = [
+    {
+        id: 1,
+        name: 'asd'
+    },
+    {
+        id: 2,
+        name: 'asd'
+    },
+    {
+        id: 3,
+        name: 'asd'
+    }
+]
+const apartmentData = [
+    {
+        id: 1,
+        value: '1к'
+    },
+    {
+        id: 2,
+        value: '2к'
+    },
+    {
+        id: 3,
+        value: '3к'
+    },
+    {
+        id: 4,
+        value: '4к+'
+    },
+]
 export const SearchMain = () => {
     
     const [activeComplext, setActiveComplext] = useState<number[]>([0])
@@ -25,38 +56,7 @@ export const SearchMain = () => {
       }))
     const searchParams = useSearchParams()
 
-    const complexData = [
-        {
-            id: 1,
-            name: 'asd'
-        },
-        {
-            id: 2,
-            name: 'asd'
-        },
-        {
-            id: 3,
-            name: 'asd'
-        }
-    ]
-    const apartmentData = [
-        {
-            id: 1,
-            value: '1к'
-        },
-        {
-            id: 2,
-            value: '2к'
-        },
-        {
-            id: 3,
-            value: '3к'
-        },
-        {
-            id: 4,
-            value: '4к+'
-        },
-    ]
+    
     const getQuery = (url = '') => {
         let query: string[] = []
         if(activeComplext.toString()) {
@@ -140,5 +140,5 @@ export const SearchMain = () => {
             Смотреть
         </Button>
     </div>
-</div>
+    </div>
 }

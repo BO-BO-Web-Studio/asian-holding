@@ -15,6 +15,9 @@
     @media (max-width: $desktop) {
         min-height: 360px;
     }
+    @media (max-width: $tablet) {
+        border-radius: 16px;
+    }
     @media (max-width: $tabletSmall) {
         min-height: 300px;
     }

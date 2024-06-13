@@ -29,13 +29,13 @@
   .#{$prefix}size {
     &-large {
       font-size: 17px;
-      // line-height: 28px;
+      line-height: 150%;
       padding: 16px 72px;
       min-height: 56px;
 
       @media (max-width: $tablet) {
         font-size: 13px;
-        line-height: 24px;
+        line-height: 150%;
         padding: 12px 32px;
       }
     }
@@ -43,13 +43,14 @@
     &-medium,
     &-small {
       font-size: 15px;
-      // line-height: 24px;
+      line-height: 150%;
       padding: 12px 51px;
     }
 
     &-medium {
       @media (max-width: $tablet) {
-        font-size: 13px;
+        font-size: 7px;
+        padding: 8px 40px;
       }
     }
     &-small {
@@ -84,6 +85,10 @@
 
     &-small {
       border-radius: 8px;
+
+      @media (max-width: $tablet) {
+        border-radius: 4px;
+      }
     }
   }
 
@@ -146,17 +151,18 @@
 
       // secondary-contained
       &.#{$prefix}bg-secondary {
-        border-color: $secondary;
-        background: $secondary;
-        color: $textDark;
+        border-color: $primary;
+        background: $white;
+        color: $primary;
 
         &:hover {
-          background: darken($secondary, 5%);
+          background: $primary;
+          color: $white;
         }
 
         &:active {
-          background: darken($secondary, 9%);
-          border-color: darken($secondary, 9%);
+          background: darken($primary, 9%);
+          border-color: darken($primary, 9%);
         }
       }
     }

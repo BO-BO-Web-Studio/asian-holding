@@ -25,20 +25,4 @@ export const ProjectsDate: IProjectCard[] = [
         image: '/assets/images/news_1.png',
         apartments: 5000
     },
-    {
-        id: 4,
-        title: 'Сдача квартир I квартал 2024',
-        name: 'ЖК Живи и Радуйся',
-        class: 'Стандарт-класс',
-        image: '/assets/images/news_1.png',
-        apartments: 5000
-    },
-    {
-        id: 5,
-        title: 'Сдача квартир I квартал 2024',
-        name: 'ЖК Живи и Радуйся',
-        class: 'Стандарт-класс',
-        image: '/assets/images/news_1.png',
-        apartments: 5000
-    }
 ]

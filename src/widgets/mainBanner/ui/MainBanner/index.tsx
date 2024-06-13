@@ -19,6 +19,7 @@ export const MainBanner = () => {
                     modules={[Navigation, Pagination, A11y]}
                     spaceBetween={50}
                     slidesPerView={1}
+                    loop={true}
                     navigation={{
                         prevEl: "#main-banner-prev",
                         nextEl: "#main-banner-next",
@@ -59,17 +60,10 @@ export const MainBanner = () => {
                                     height={620}
                                     />
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={classes.slide} >
-                            <div className={classes.bl_img} >
-                                <img 
-                                    className={classes.img} 
-                                    src="/assets/images/banner_1.png"
-                                    width={1390}
-                                    height={620}
-                                    />
+                            <div className={classes.bl_button} >
+                                <Button buttonSize='medium' fullWidth>
+                                    Выбрать квартиру
+                                </Button>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -82,6 +76,45 @@ export const MainBanner = () => {
                                     width={1390}
                                     height={620}
                                     />
+                            </div>
+                            <div className={classes.bl_button} >
+                                <Button buttonSize='medium' fullWidth>
+                                    Выбрать квартиру
+                                </Button>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={classes.slide} >
+                            <div className={classes.bl_img} >
+                                <img 
+                                    className={classes.img} 
+                                    src="/assets/images/banner_1.png"
+                                    width={1390}
+                                    height={620}
+                                    />
+                            </div>
+                            <div className={classes.bl_button} >
+                                <Button buttonSize='medium' fullWidth>
+                                    Выбрать квартиру
+                                </Button>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={classes.slide} >
+                            <div className={classes.bl_img} >
+                                <img 
+                                    className={classes.img} 
+                                    src="/assets/images/banner_1.png"
+                                    width={1390}
+                                    height={620}
+                                    />
+                            </div>
+                            <div className={classes.bl_button} >
+                                <Button buttonSize='medium' fullWidth>
+                                    Выбрать квартиру
+                                </Button>
                             </div>
                         </div>
                     </SwiperSlide>
