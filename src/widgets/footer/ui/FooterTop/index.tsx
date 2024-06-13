@@ -22,7 +22,7 @@ export const FooterTop = () => {
         <Link href={contacts.link} className={classes.tell}>
             {contacts.phone}
         </Link>
-        <Button variant='outlined' bg='secondary' buttonSize='medium' >
+        <Button className={classes.button} variant='outlined' bg='secondary' buttonSize='medium' >
             Обратный звонок
         </Button>
     </div>

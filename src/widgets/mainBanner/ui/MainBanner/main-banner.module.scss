@@ -1,26 +1,33 @@
 @import 'src/@app/styles/variables';
 @import 'src/@app/styles/mixins';
 
+.main_banner {
+    padding-top: 48px;
+    background-color: $gray50;
+    @media (max-width: $tablet) {
+        padding-top: 16px;
+    }
+}
 .banner {
-    margin-top: 132px;
+
     padding-bottom: 48px;
     margin-bottom: 48px;
     border-bottom: 1px solid $gray3;
     height: 100%;
     position: relative;
+    @media (max-width: $tablet) {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
 }
 .bottom {
     margin-top: 28px;
     display: flex;
     width: 100%;
     justify-content: center;
-    // align-items: center;
-    // grid-gap: 40px;
-    // position: absolute;
-    // bottom: 110px;
-    // left: 72px;
-    // z-index: 1;
-    // margin-bottom: 110px;
+    @media (max-width: $tablet) {
+        margin-top: 24px;
+    }
 }
 .bullets {
     margin: 0;
@@ -30,14 +37,18 @@
 
 .slide {
     position: relative;
-    // padding-top: 72px;
-    // padding-left: 72px;
+    border: 1px solid $gray2;
+    border-radius: 16px;
+    @media (max-width: $tablet) {
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: $gray4;
+    }
 }
 .bl_img {
     position: relative;
     display: block;
     width: 100%;
-    
     
     &::after {
         content: '';
@@ -45,6 +56,10 @@
         height: 100%;
         display: block;
         padding-bottom: 44.54%;
+    }
+
+    @media (max-width: $tablet) {
+        min-height: 457px;
     }
 }
 .img {
@@ -56,6 +71,13 @@
     height: 100%;
     object-fit: fill;
 }
-.nav {
 
+.bl_button {
+    position: absolute;
+    bottom: 58px;
+    left: 72px;
+    @media (max-width: $tablet) {
+        position: initial;
+        padding: 24px 20px;   
+    }
 }

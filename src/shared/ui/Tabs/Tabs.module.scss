@@ -70,7 +70,7 @@
 	background: none;
 	border: none;
 	color: $textDark3;
-	padding: 12px 14px;
+	padding: 8px 10px;
 	box-sizing: border-box;
 	white-space: nowrap;
 	cursor: pointer;
@@ -87,11 +87,11 @@
 	@media (min-width: $tablet) {
 		font-size: 17px;
 		line-height: 20px;
+		padding: 12px 14px;
 	}
 	@media (min-width: $desktop) {
 		// font-size: 15px;
 		line-height: 24px;
-		padding: 12px 14px;
 	}
 
 	&.Active {

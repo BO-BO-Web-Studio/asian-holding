@@ -12,9 +12,6 @@
   justify-content: center;
   align-items: center;
 
-  @media (max-width: $tablet) {
-    //align-items: stretch;
-  }
 }
 
 .backdrop {
@@ -39,7 +36,6 @@
   max-height: 100%;
   overflow: auto;
   border-radius: 16px;
-  // padding: 40px 0;
   box-sizing: border-box;
 
   @media (max-width: $tablet) {
@@ -48,12 +44,6 @@
     min-height: 100%;
     background: #fff;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-    //position: relative;
-    //position: absolute;
-    //top: 0;
-    //left: 0;
-    //right: 0;
-    //bottom: 0;
     border-radius: 0;
   }
 
@@ -67,7 +57,7 @@
   width: 100%;
   border-radius: 16px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: initial;
   position: relative;
   min-height: 400px;
   padding: 48px;
@@ -76,11 +66,6 @@
     border-radius: 0;
     height: 100%;
     padding: 48px 24px;
-    //position: absolute;
-    //top: 0;
-    //left: 0;
-    //right: 0;
-    //bottom: 0;
   }
 
   @media (max-width: $mobileLarge) {
@@ -103,6 +88,8 @@
   @media (max-width: $tablet) {
     background: #fff;
     position: fixed;
+    right: 16px;
+    top: 16px;
   }
 
   svg {

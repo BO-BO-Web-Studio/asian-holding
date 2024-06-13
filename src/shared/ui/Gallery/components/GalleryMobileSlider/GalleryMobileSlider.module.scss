@@ -2,34 +2,24 @@
 @import 'src/@app/styles/mixins';
 
 .List {
-	// list-style: none;
-	// margin: 0;
-	// padding: 0;
 	display: flex;
 	width: 100%;
-	// overflow: auto;
 
-	&::-webkit-scrollbar {
-		// display: none;
-		// opacity: 0;
-	}
 }
 
 
 .Item_main_slide {
-	// padding-bottom: 15px;
 }
 
 .Item_main {
-	// max-height: 300px;
 	width: 100%;
-	// height: 100%;
 	position: relative;
+	border-radius: 12px;
+	overflow: hidden;
 
 	&::after {
 		content: '';
 		padding-bottom: 57.23%;
-		// padding-bottom: 100%;
 		display: block;
 	}
 
@@ -64,10 +54,6 @@
 
 	:global(.swiper-pagination) {
 		bottom: 30px !important;
-
-		@media (max-width: $tabletSmall) {
-			// bottom: 20px;
-		}
 	}
 
 }
@@ -84,20 +70,30 @@
 
 .Image {
 	width: 100%;
-	// border-radius: 8px;
 	object-fit: cover;
 }
 
-.body {
-	// margin: 0px -16px;
+
+.bottom {
+    @media (max-width: $tablet) {
+        margin-top: 24px;
+    }
 }
 
-.namm {
+.show_button {
+	z-index: 1;
 	position: absolute;
-	left: 0;
-	top: 0;
-	width: 50px;
-	height: 50px;
-	z-index: 10;
-	background-color: red;
+	top: 16px;
+	right: 16px;
+	width: 36px;
+	height: 36px;
+	cursor: pointer;
+	border-radius: 50%;
+	overflow: hidden;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $gray4;
+
 }

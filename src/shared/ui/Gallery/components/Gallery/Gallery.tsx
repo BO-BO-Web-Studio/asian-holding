@@ -29,22 +29,10 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 	const image = images.find(({ id }) => id === activeId)!
 	
 
-	// if (width < 1024) {
-	// 	return (
-			// <GalleryMobile
-			// 	activeId={activeId}
-			// 	onClick={setActiveId}
-			// 	image={image}
-			// 	images={images}
-			// 	buttons={buttons}
-			// 	id={id}
-			// />
-	// 	)
-	// }
-
 	return (
 		<div>
-			<div className={classes.mobile} >
+			
+			<div className={classes.mobile}>
 				<GalleryMobile
 					activeId={activeId}
 					onClick={setActiveId}
@@ -66,12 +54,11 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 							setOpen(true)
 							setActiveId(id)
 							setInitialSlide(images.findIndex((image) => image.id === id))
-							// setInitialSlide(333)
 						}}
 						images={images}
 					/>}
 			</div>
-		</div>
+			</div>
 	)
 }
 

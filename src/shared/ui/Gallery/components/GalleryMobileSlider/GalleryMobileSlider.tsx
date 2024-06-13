@@ -9,6 +9,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs, Pagination } from 'swiper/modules';
 import { type Swiper as SwiperTypes } from "swiper";
+import SliderNav from '@shared/ui/SliderNav/SliderNav';
+import clsx from 'clsx';
+import { HandySvg } from 'handy-svg';
 
 
 
@@ -27,12 +30,21 @@ function GalleryMobileSlider({ images, onClick, buttonChildren }: GalleryMobileS
 			<Swiper
 				spaceBetween={15}
 				slidesPerView={1}
-				pagination={{
-					clickable: true,
-				}}
 				thumbs={{ swiper: swiperInstance }}
 				modules={[Navigation, FreeMode, Thumbs, Pagination]}
 				className={classes.mySwiper2}
+				navigation={{
+					prevEl: "#mobile-gallery-prev",
+					nextEl: "#mobile-gallery-next",
+					enabled: true,
+				}}
+				pagination={{ 
+					enabled: true,
+					el: '#bullet-mobile-gallry',
+					bulletClass: 'slider-custom-pagination-bullet',
+					bulletActiveClass: 'slider-custom-pagination-bullet-active',
+					clickable: true 
+				}}
 			>
 				{images.map(({ id, url, title }) => (
 					<SwiperSlide
@@ -55,11 +67,38 @@ function GalleryMobileSlider({ images, onClick, buttonChildren }: GalleryMobileS
 								width={116}
 								height={116}
 							/>
+							<button 
+								className={classes.show_button} 
+								onClick={() => onClick(id)}
+								>
+								<HandySvg 
+									src='/assets/icons/show-image.svg' 
+									width={14}
+									height={14}
+									alt='show'
+									/>
+							</button>
 							{buttonChildren}
 						</div>
 					</SwiperSlide>
 				))}
 			</Swiper>
+			<div className={classes.bottom} >
+                    <SliderNav 
+                    className={classes.nav}
+                    prevId="mobile-gallery-prev"
+                    nextId="mobile-gallery-next"
+                    theme='light'
+                    >
+                    <div id={'bullet-mobile-gallry'}  
+                        className={clsx(
+                        "slider-custom-pagination",
+                        "slider-custom-pagination-light",
+                        classes.bullets
+                        )} >
+                    </div>
+                    </SliderNav>
+                </div>
 		</div>
 	)
 }

@@ -93,9 +93,9 @@
   width: 100%;
   @include min-max(320px, $wrapper, 36px);
 
-  //@media (max-width: $desktopSmall) {
-  //  @include min-max(320px, $wrapper, 36px);
-  //}
+  @media (max-width: $desktopSmall) {
+   @include min-max(320px, $wrapper, 24px);
+  }
   //
   //@media (max-width: $tabletSmall) {
   //  @include min-max(320px, $wrapperTablet, 36px);

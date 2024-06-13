@@ -1,9 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import { Header } from "@widgets/header";
 import { MainBanner } from "@widgets/mainBanner";
 import { PhotoGallery } from "@widgets/photoGallery";
+import { SearchBar } from "@widgets/searchBar";
+import { ProjectsSection } from "@widgets/projects";
+import { NewsSection } from "@widgets/news";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -16,7 +17,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainBanner />
+      <ProjectsSection />
+      <SearchBar />
       <PhotoGallery />
+      <NewsSection />
     </>
   );
 }

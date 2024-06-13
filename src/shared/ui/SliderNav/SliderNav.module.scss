@@ -2,20 +2,14 @@
 @import 'src/@app/styles/mixins';
 
 .Navigation {
-  // width: 84px;
   display: flex;
   align-items: center;
   width: auto;
   grid-gap: 16px;
-  // justify-content: center;
-  // position: absolute;
-  // top: 50%;
-  // right: 0;
-  // transform: translateY(-50%);
-
-  // @media (min-width: $desktop) {
-  //   display: flex;
-  // }
+  @media (max-width: $tablet) {
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .Light {
@@ -64,12 +58,7 @@
 
   svg {
     transition: all 100ms;
-    // stroke: $text;
     fill: none;
     stroke: none;
   }
-}
-
-.Prev {
-  // margin-right: 16px;
 }

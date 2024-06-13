@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Burger } from '@widgets/header/ui/Burger'
@@ -7,11 +6,14 @@ import { useMenuStore } from '@widgets/header/model/menuStore'
 import classes from './navigation.module.scss'
 import useLockBodyScroll from '@custom-react-hooks/use-lock-body-scroll'
 import { Button } from '@shared/ui/Button'
-import { useState } from 'react'
-// import { ModalContent } from '@widgets/modal'
 import useTranslation from 'next-translate/useTranslation';
 import { menuList } from '@widgets/header/consts/menuList'
 import { Modal } from '@shared/ui/Modal'
+import { LangButton } from '@features/LangButton'
+import { Contacts } from '../Contacts'
+import { HandySvg } from 'handy-svg'
+import { contacts } from '@shared/const/contacts'
+import Image from 'next/image'
 
 interface Props {
   isOpenModal: boolean
@@ -30,6 +32,18 @@ function Navigation({ setModal, isOpenModal }: Props) {
   return (
     <nav className={clsx(classes.nav, pathname === '/' && classes.mainPage)}>
       <div className={clsx(classes.menu, isOpen && classes.open)}>
+        <div className={classes.logo_bl}>
+          <div className={classes.logo} >
+                <Image
+                  src={`/assets/icons/logo-main.svg`}
+                  alt="iontravel"
+                  width={58}
+                  height={50}
+                  priority
+                />
+          </div>
+          <Burger />
+        </div>
         <ul className={classes.list}>
           {menuList.map(({ href, name }) => (
             <li
@@ -49,12 +63,31 @@ function Navigation({ setModal, isOpenModal }: Props) {
             </li>
           ))}
         </ul>
-        {/* <Button
+        <Button
           className={classes.button}
           onClick={() => setModal()}
         >
-          Оставить заявку
-        </Button> */}
+            Оставить заявку
+        </Button>
+        <div className={classes.lang_button} >          
+          <LangButton />
+        </div>
+        <div className={classes.footer} >
+          <div className={classes.phone_bl} >
+            <div className={classes.phone_svg}>
+              <HandySvg
+                src='/assets/icons/phone.svg'
+                whith={24}
+                height={24}
+              />
+            </div>
+            <div className={classes.phone} >
+              <a className={classes.phone_link} href={`tel:${contacts.link}`}>
+                {contacts.phone}
+              </a>
+            </div>
+          </div>
+        </div>
         <Modal
           isOpen={isOpenModal}
           close={setModal}
@@ -66,6 +99,7 @@ function Navigation({ setModal, isOpenModal }: Props) {
           {/* </ModalContent> */}
         </Modal>
       </div>
+      <div className={clsx(classes.wrapper, isOpen && classes.open_wrapper)} ></div>
     </nav>
   )
 }
