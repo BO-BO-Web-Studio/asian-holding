@@ -9,19 +9,12 @@ interface Props {
 }
 
 export const NewsMiniCard = ({item}: Props) => {
-    return <Link href={`news-${item.id}`} className={classes.card} >
+    return <Link href={`/news/${item.id}`} className={classes.card} >
         <div className={classes.body} >
             <div className={classes.bl_title} >
                 <p className={classes.title}>{item.name}</p>
             </div>
             <div className={classes.bottom} >
-                <HandySvg 
-                    className={classes.svg}
-                    src='/assets/icons/time.svg'
-                    width={24}
-                    height={24}
-                    alt={item.id}
-                    />
                 <Date date={item.date} />
             </div>
         </div>

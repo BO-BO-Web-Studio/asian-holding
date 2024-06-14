@@ -4,8 +4,14 @@ import { NewsData } from '@widgets/news/const/newsData'
 import { NewsMiniCard } from '../NewsMiniCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
+import { ButtonMore } from '@shared/ui/ButtonMore'
 export const NewsSection = () => {
-    return <Section name='Новости'>
+    return <Section 
+        name='Новости'
+        buttonMore={
+            <ButtonMore name='Смотреть все новости' link='/news' />
+        }
+        >
         <Swiper
             className={classes.Swiper}
             slidesPerView={1.2}
@@ -15,10 +21,6 @@ export const NewsSection = () => {
                     spaceBetween: 48,
                     slidesPerView: 4
                 },
-                // 1024: {
-                //     spaceBetween: 20,
-                //     slidesPerView: 3
-                // }
             }}
 				>
 					{NewsData.map((item) => (

@@ -26,7 +26,7 @@
 .breadcrumbs {
   margin-bottom: 28px;
   
-  @media (max-width: $mobileLarge) {
+  @media (max-width: $tablet) {
     margin-bottom: 24px;
   }
 }
@@ -56,6 +56,7 @@
   @media (max-width: $tablet) {
     font-size: 33px;
     line-height: 40px;
+    white-space: pre-wrap;
   }
 
   @media (max-width: $mobileLarge) {

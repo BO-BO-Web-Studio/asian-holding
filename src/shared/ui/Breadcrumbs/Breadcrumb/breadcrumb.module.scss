@@ -4,6 +4,7 @@
 .item {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   &:last-of-type {
     .chevron {
@@ -70,7 +71,7 @@
   @media (max-width: $desktopSmall) {
     margin: 0 8px;
     width: 5px;
-    height: 12px;
+    height: 9px;
   }
 }
 
