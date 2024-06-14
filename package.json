@@ -23,6 +23,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.5",
     "react-hot-toast": "^2.4.1",
+    "react-loading-skeleton": "^3.4.0",
     "react-spring": "^9.7.3",
     "sass": "^1.77.4",
     "swiper": "^11.1.4",

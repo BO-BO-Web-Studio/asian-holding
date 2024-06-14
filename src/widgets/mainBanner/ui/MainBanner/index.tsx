@@ -9,6 +9,7 @@ import { HandySvg } from "handy-svg";
 import clsx from "clsx";
 import SliderNav from "@shared/ui/SliderNav/SliderNav";
 import { Button } from "@shared/ui/Button";
+import Image from "next/image";
 
 export const MainBanner = () => {
     return <div className={classes.main_banner}>
@@ -36,15 +37,16 @@ export const MainBanner = () => {
                     <SwiperSlide>
                         <div className={classes.slide} >
                             <div className={classes.bl_img} >
-                                <img 
+                                <Image
                                     className={classes.img} 
                                     src="/assets/images/banner_1.png"
                                     width={1390}
                                     height={620}
+                                    alt={'banner'}
                                     />
                             </div>
                             <div className={classes.bl_button} >
-                                <Button buttonSize='medium' fullWidth>
+                                <Button className={classes.button} buttonSize='medium' fullWidth>
                                     Выбрать квартиру
                                 </Button>
                             </div>
@@ -53,15 +55,16 @@ export const MainBanner = () => {
                     <SwiperSlide>
                         <div className={classes.slide} >
                             <div className={classes.bl_img} >
-                                <img 
+                                <Image 
                                     className={classes.img} 
                                     src="/assets/images/banner_1.png"
                                     width={1390}
                                     height={620}
+                                    alt={'banner'}
                                     />
                             </div>
                             <div className={classes.bl_button} >
-                                <Button buttonSize='medium' fullWidth>
+                                <Button className={classes.button} buttonSize='medium' fullWidth>
                                     Выбрать квартиру
                                 </Button>
                             </div>
@@ -70,15 +73,16 @@ export const MainBanner = () => {
                     <SwiperSlide>
                         <div className={classes.slide} >
                             <div className={classes.bl_img} >
-                                <img 
+                                <Image 
                                     className={classes.img} 
                                     src="/assets/images/banner_1.png"
                                     width={1390}
                                     height={620}
+                                    alt={'banner'}
                                     />
                             </div>
                             <div className={classes.bl_button} >
-                                <Button buttonSize='medium' fullWidth>
+                                <Button className={classes.button} buttonSize='medium' fullWidth>
                                     Выбрать квартиру
                                 </Button>
                             </div>
@@ -87,15 +91,16 @@ export const MainBanner = () => {
                     <SwiperSlide>
                         <div className={classes.slide} >
                             <div className={classes.bl_img} >
-                                <img 
+                                <Image 
                                     className={classes.img} 
                                     src="/assets/images/banner_1.png"
                                     width={1390}
                                     height={620}
+                                    alt={'banner'}
                                     />
                             </div>
                             <div className={classes.bl_button} >
-                                <Button buttonSize='medium' fullWidth>
+                                <Button className={classes.button} buttonSize='medium' fullWidth>
                                     Выбрать квартиру
                                 </Button>
                             </div>
@@ -104,15 +109,16 @@ export const MainBanner = () => {
                     <SwiperSlide>
                         <div className={classes.slide} >
                             <div className={classes.bl_img} >
-                                <img 
+                                <Image 
                                     className={classes.img} 
                                     src="/assets/images/banner_1.png"
                                     width={1390}
                                     height={620}
+                                    alt={'banner'}
                                     />
                             </div>
                             <div className={classes.bl_button} >
-                                <Button buttonSize='medium' fullWidth>
+                                <Button className={classes.button} buttonSize='medium' fullWidth>
                                     Выбрать квартиру
                                 </Button>
                             </div>

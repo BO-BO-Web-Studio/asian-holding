@@ -2,11 +2,11 @@ import classes from './section.module.scss'
 import { HTMLAttributes, ReactNode } from 'react'
 import clsx from 'clsx'
 import { Wrapper } from '@shared/ui/Wrapper'
-import Divider from '../Divider/Divider'
 
 interface Props extends HTMLAttributes<HTMLElement> {
   name: ReactNode
   buttonMore?: ReactNode
+  breadcrumbs?: ReactNode
   wrapperProps?: HTMLAttributes<HTMLDivElement>
   headerProps?: HTMLAttributes<HTMLElement>
   nameProps?: HTMLAttributes<HTMLHeadingElement>
@@ -17,6 +17,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 function Section({
                    name,
                    buttonMore = null,
+                   breadcrumbs,
                    className,
                    wrapperProps,
                    headerProps,
@@ -31,12 +32,15 @@ function Section({
   return (
     <section
       {...props}
-      className={clsx(classes.section, className)}
+      className={clsx(classes.section, breadcrumbs && classes.page, className)}
     >
       <Wrapper
         {...wrapperProps}
         className={clsx(classes.wrapper, wrapperProps?.className)}
       >
+        {breadcrumbs && <div className={classes.breadcrumbs}>
+          {breadcrumbs}
+          </div>}
         <header
           {...headerProps}
           className={clsx(classes.header, headerProps?.className)}

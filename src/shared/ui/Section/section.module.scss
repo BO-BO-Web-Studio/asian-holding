@@ -7,10 +7,6 @@
   @media (max-width: $tablet) {
     margin-bottom: 62px;
   }
-
-  // @media (max-width: $mobileLarge) {
-  //   margin-bottom: 20px;
-  // }
 }
 
 .header {
@@ -24,7 +20,23 @@
   }
 
   @media (max-width: $mobileLarge) {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+  }
+}
+.breadcrumbs {
+  margin-bottom: 28px;
+  
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 24px;
+  }
+}
+.page {
+  margin-top: 96px;
+  @media (max-width: $desktopSmall) {
+    margin-top: 48px;
+  }
+  @media (max-width: $tablet) {
+    margin-top: 24px;
   }
 }
 

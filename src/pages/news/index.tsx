@@ -1,14 +1,15 @@
 import { Apartments } from "@widgets/apartments"
+import { News } from "@widgets/news"
 import Head from "next/head"
 
 
 function Page() {
     return <>
         <Head>
-          <title>Квартиры | Asian Holding</title>
-          <meta name='description' content='Квартиры' />
+          <title>Новости | Asian Holding</title>
+          <meta name='description' content='Новости' />
         </Head>
-        <Apartments />
+        <News />
         </>
 }
 

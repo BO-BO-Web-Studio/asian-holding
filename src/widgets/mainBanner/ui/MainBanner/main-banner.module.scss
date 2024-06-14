@@ -81,3 +81,9 @@
         padding: 24px 20px;   
     }
 }
+
+.button {
+    @media (max-width: $tablet) {
+        font-size: 13px;
+    }
+}

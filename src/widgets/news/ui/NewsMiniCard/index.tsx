@@ -2,6 +2,7 @@ import { INews } from '@widgets/news/model/News'
 import classes from './news-mini-card.module.scss'
 import { HandySvg } from 'handy-svg'
 import Link from 'next/link'
+import { Date } from '@shared/ui/Date'
 
 interface Props {
     item: INews
@@ -21,9 +22,7 @@ export const NewsMiniCard = ({item}: Props) => {
                     height={24}
                     alt={item.id}
                     />
-                <p className={classes.data} >
-                    {item.date}
-                </p>
+                <Date date={item.date} />
             </div>
         </div>
     </Link>
