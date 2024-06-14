@@ -4,11 +4,15 @@ import { ProjectsDate } from '@widgets/projects/const/ProjectsDate'
 import { ProjectCard } from '../ProjectCard'
 import { useWindowSize } from '@uidotdev/usehooks'
 import { ProjectsMobile } from '../ProjectsMobile'
+import { ButtonMore } from '@shared/ui/ButtonMore'
 
 export const ProjectsSection = () => {
     const size = useWindowSize();
     
-    return <Section name='Наши проекты'>
+    return <Section 
+        name='Наши проекты'
+        buttonMore={<ButtonMore name='Смотреть все проекты' link='/projects' />}
+        >
         {size.width && size.width > 768 ?  <div className={classes.items} >
             {ProjectsDate.map((item) => <>
                 <div className={classes.item}>

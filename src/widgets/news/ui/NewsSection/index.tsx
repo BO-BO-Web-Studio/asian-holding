@@ -3,7 +3,6 @@ import classes from './news-section.module.scss'
 import { NewsData } from '@widgets/news/const/newsData'
 import { NewsMiniCard } from '../NewsMiniCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper/modules'
 import { ButtonMore } from '@shared/ui/ButtonMore'
 export const NewsSection = () => {
     return <Section 
@@ -20,6 +19,14 @@ export const NewsSection = () => {
                 1360: {
                     spaceBetween: 48,
                     slidesPerView: 4
+                },
+                1024: {
+                    spaceBetween: 24,
+                    slidesPerView: 3
+                },
+                600: {
+                    spaceBetween: 24,
+                    slidesPerView: 2
                 },
             }}
 				>

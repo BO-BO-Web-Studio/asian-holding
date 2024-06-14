@@ -45,7 +45,6 @@
   font-weight: 700;
   line-height: 40px;
   margin: 0 24px 0 0;
-  white-space: nowrap;
   color: $textDark;
 
   @media (max-width: $desktopSmall) {
@@ -56,7 +55,6 @@
   @media (max-width: $tablet) {
     font-size: 33px;
     line-height: 40px;
-    white-space: pre-wrap;
   }
 
   @media (max-width: $mobileLarge) {

@@ -7,7 +7,7 @@ interface Props {
     item: IProjectCard
 }
 export const ProjectCard = ({item}: Props) => {
-    return <Link href={item.name} className={classes.card}>
+    return <Link href={`/projects/${item.id}`} className={classes.card}>
         <Image
             className={classes.image}
             src={item.image} 

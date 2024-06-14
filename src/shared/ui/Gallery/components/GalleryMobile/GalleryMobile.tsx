@@ -1,6 +1,6 @@
 import classes from './GalleryMobile.module.scss'
 import { GalleryProps } from '../Gallery/Gallery'
-import { IGallery } from '../../interfaces/IGallery'  
+import { IGallery } from '../../../../model/IGallery'  
 import { Swiper, SwiperSlide } from 'swiper/react'
 import GalleryMobileSlider from '../GalleryMobileSlider/GalleryMobileSlider' 
 import { Wrapper } from '@shared/ui/Wrapper' 

@@ -7,15 +7,16 @@ import GallerySlider from '../GallerySlider/GallerySlider'
 import { useWindowSize } from 'usehooks-ts'
 import GalleryMobile from '../GalleryMobile/GalleryMobile' 
 import GalleryModal from '@shared/ui/GalleryModal' 
-import { IGallery } from '../../interfaces/IGallery'
+import { IGallery } from '../../../../model/IGallery'
 
 export interface GalleryProps {
+	className?: string 
 	images: IGallery[]
 	buttons?: ReactNode
 	id?: number
 }
 
-function Gallery({ images, buttons, id }: GalleryProps) {
+function Gallery({ images, buttons, id, className }: GalleryProps) {
 	const [activeId, setActiveId] = useState<number | null>(
 		getMinId(images.map(({ id }) => id))
 	)
@@ -30,8 +31,7 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 	
 
 	return (
-		<div>
-			
+		<div className={className} >
 			<div className={classes.mobile}>
 				<GalleryMobile
 					activeId={activeId}
@@ -58,7 +58,7 @@ function Gallery({ images, buttons, id }: GalleryProps) {
 						images={images}
 					/>}
 			</div>
-			</div>
+		</div>
 	)
 }
 

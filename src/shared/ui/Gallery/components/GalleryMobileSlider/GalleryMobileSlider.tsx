@@ -1,5 +1,5 @@
 import classes from './GalleryMobileSlider.module.scss'
-import { IGallery } from '../../interfaces/IGallery'; 
+import { IGallery } from '../../../../model/IGallery'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { ReactNode, useRef, useState } from 'react';
 import 'swiper/css';
@@ -12,6 +12,7 @@ import { type Swiper as SwiperTypes } from "swiper";
 import SliderNav from '@shared/ui/SliderNav/SliderNav';
 import clsx from 'clsx';
 import { HandySvg } from 'handy-svg';
+import Image from 'next/image';
 
 
 
@@ -52,7 +53,7 @@ function GalleryMobileSlider({ images, onClick, buttonChildren }: GalleryMobileS
 						className={classes.Item_main_slide}
 					>
 						<div className={classes.Item_main}>
-							<img
+							<Image
 								className={classes.Image}
 								onClick={(event) => {
 									onClick(id)
