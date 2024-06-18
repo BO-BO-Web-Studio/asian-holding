@@ -12,6 +12,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
   nameProps?: HTMLAttributes<HTMLHeadingElement>
   buttonMoreProps?: HTMLAttributes<HTMLDivElement>
   mainTitle?: boolean
+  lastSection?: boolean
 }
 
 function Section({
@@ -25,6 +26,7 @@ function Section({
                    buttonMoreProps,
                    children,
                    mainTitle,
+                   lastSection,
                    ...props
                  }: Props) {
   const Title = mainTitle ? 'h1' : 'h2'
@@ -32,7 +34,7 @@ function Section({
   return (
     <section
       {...props}
-      className={clsx(classes.section, breadcrumbs && classes.page, className)}
+      className={clsx(classes.section, breadcrumbs && classes.page, className, lastSection && classes.lastSection)}
     >
       <Wrapper
         {...wrapperProps}
@@ -56,7 +58,7 @@ function Section({
           </div>
         </header>
         {children}
-        <div className={classes.divider} ></div>
+        {!lastSection && <div className={classes.divider} ></div>}
       </Wrapper>
     </section>
   )

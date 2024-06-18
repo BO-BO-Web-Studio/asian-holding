@@ -4,8 +4,12 @@
 .main_banner {
     padding-top: 48px;
     background-color: $gray50;
+    padding-bottom: 48px;
+    margin-bottom: 96px;
     @media (max-width: $tablet) {
         padding-top: 16px;
+        padding-bottom: 20px;
+        margin-bottom: 62px;
     }
 }
 .banner {

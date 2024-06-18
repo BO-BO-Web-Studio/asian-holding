@@ -10,6 +10,7 @@ import clsx from "clsx";
 import SliderNav from "@shared/ui/SliderNav/SliderNav";
 import { Button } from "@shared/ui/Button";
 import Image from "next/image";
+import { UnderBanner } from "../UnderBanner";
 
 export const MainBanner = () => {
     return <div className={classes.main_banner}>
@@ -143,6 +144,7 @@ export const MainBanner = () => {
                     </SliderNav>
                 </div>
             </div>
+            <UnderBanner />
         </Wrapper>
     </div>
 }

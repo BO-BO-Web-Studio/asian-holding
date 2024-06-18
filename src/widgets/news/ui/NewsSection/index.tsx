@@ -10,6 +10,7 @@ export const NewsSection = () => {
         buttonMore={
             <ButtonMore name='Смотреть все новости' link='/news' />
         }
+        lastSection
         >
         <Swiper
             className={classes.Swiper}
