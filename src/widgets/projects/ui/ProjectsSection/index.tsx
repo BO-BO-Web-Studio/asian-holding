@@ -1,24 +1,30 @@
 import { Section } from '@shared/ui/Section'
 import classes from './projects-section.module.scss'
-import { ProjectsDate } from '@widgets/projects/const/ProjectsDate'
 import { ProjectCard } from '../ProjectCard'
 import { useWindowSize } from '@uidotdev/usehooks'
 import { ProjectsMobile } from '../ProjectsMobile'
 import { ButtonMore } from '@shared/ui/ButtonMore'
+import { IProjectCard } from '@widgets/projects/model/IProjectCard'
 
-export const ProjectsSection = () => {
+interface Props {
+    residences?: IProjectCard[]
+}
+export const ProjectsSection = ({residences}: Props) => {
     const size = useWindowSize();
     
+    if(!residences) {
+        return null
+    }
     return <Section 
         name='Наши проекты'
         buttonMore={<ButtonMore name='Смотреть все проекты' link='/projects' />}
         >
         {size.width && size.width > 768 ?  <div className={classes.items} >
-            {ProjectsDate.map((item) => <>
+            {residences.map((item) => <>
                 <div className={classes.item}>
                     <ProjectCard item={item} />
                 </div>
             </>)}
-        </div> : <ProjectsMobile items={ProjectsDate} /> }
+        </div> : <ProjectsMobile items={residences} /> }
     </Section>
 }

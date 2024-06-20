@@ -11,8 +11,17 @@ import SliderNav from "@shared/ui/SliderNav/SliderNav";
 import { Button } from "@shared/ui/Button";
 import Image from "next/image";
 import { UnderBanner } from "../UnderBanner";
+import { IMainSlide } from "@widgets/mainBanner/model/MainBanner";
 
-export const MainBanner = () => {
+interface Props {
+    banners?: IMainSlide[]
+}
+export const MainBanner = ({banners}: Props) => {
+    console.log(banners)
+    // debugger
+    if(!banners) {
+        return null
+    }
     return <div className={classes.main_banner}>
             <Wrapper>
             <div className={classes.banner} >
@@ -35,97 +44,26 @@ export const MainBanner = () => {
                         clickable: true 
                     }}
                     >
-                    <SwiperSlide>
-                        <div className={classes.slide} >
-                            <div className={classes.bl_img} >
-                                <Image
-                                    className={classes.img} 
-                                    src="/assets/images/banner_1.png"
-                                    width={1390}
-                                    height={620}
-                                    alt={'banner'}
-                                    />
+                        {banners.map((item) => 
+                        <SwiperSlide key={item.id}>
+                            <div className={classes.slide} >
+                                <div className={classes.bl_img} >
+                                    <Image
+                                        className={classes.img} 
+                                        src={item.img}
+                                        width={1390}
+                                        height={620}
+                                        alt={'banner'}
+                                        />
+                                </div>
+                                <div className={classes.bl_button} >
+                                    <Button className={classes.button} buttonSize='medium' fullWidth>
+                                        Выбрать квартиру
+                                    </Button>
+                                </div>
                             </div>
-                            <div className={classes.bl_button} >
-                                <Button className={classes.button} buttonSize='medium' fullWidth>
-                                    Выбрать квартиру
-                                </Button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={classes.slide} >
-                            <div className={classes.bl_img} >
-                                <Image 
-                                    className={classes.img} 
-                                    src="/assets/images/banner_1.png"
-                                    width={1390}
-                                    height={620}
-                                    alt={'banner'}
-                                    />
-                            </div>
-                            <div className={classes.bl_button} >
-                                <Button className={classes.button} buttonSize='medium' fullWidth>
-                                    Выбрать квартиру
-                                </Button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={classes.slide} >
-                            <div className={classes.bl_img} >
-                                <Image 
-                                    className={classes.img} 
-                                    src="/assets/images/banner_1.png"
-                                    width={1390}
-                                    height={620}
-                                    alt={'banner'}
-                                    />
-                            </div>
-                            <div className={classes.bl_button} >
-                                <Button className={classes.button} buttonSize='medium' fullWidth>
-                                    Выбрать квартиру
-                                </Button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={classes.slide} >
-                            <div className={classes.bl_img} >
-                                <Image 
-                                    className={classes.img} 
-                                    src="/assets/images/banner_1.png"
-                                    width={1390}
-                                    height={620}
-                                    alt={'banner'}
-                                    />
-                            </div>
-                            <div className={classes.bl_button} >
-                                <Button className={classes.button} buttonSize='medium' fullWidth>
-                                    Выбрать квартиру
-                                </Button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={classes.slide} >
-                            <div className={classes.bl_img} >
-                                <Image 
-                                    className={classes.img} 
-                                    src="/assets/images/banner_1.png"
-                                    width={1390}
-                                    height={620}
-                                    alt={'banner'}
-                                    />
-                            </div>
-                            <div className={classes.bl_button} >
-                                <Button className={classes.button} buttonSize='medium' fullWidth>
-                                    Выбрать квартиру
-                                </Button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    
+                        </SwiperSlide>
+                        )}
             </Swiper>
                 <div className={classes.bottom} >
                     <SliderNav 

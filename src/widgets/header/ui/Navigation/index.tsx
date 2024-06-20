@@ -10,7 +10,6 @@ import useTranslation from 'next-translate/useTranslation';
 import { menuList } from '@widgets/header/consts/menuList'
 import { Modal } from '@shared/ui/Modal'
 import { LangButton } from '@features/LangButton'
-import { Contacts } from '../Contacts'
 import { HandySvg } from 'handy-svg'
 import { contacts } from '@shared/const/contacts'
 import Image from 'next/image'

@@ -1,10 +1,19 @@
 import { Section } from '@shared/ui/Section'
 import classes from './news-section.module.scss'
-import { NewsData } from '@widgets/news/const/newsData'
 import { NewsMiniCard } from '../NewsMiniCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ButtonMore } from '@shared/ui/ButtonMore'
-export const NewsSection = () => {
+import { INews } from '@widgets/news/model/News'
+
+interface Props {
+    news?: INews[]
+}
+
+export const NewsSection = ({news}: Props) => {
+    
+    if(!news) {
+        return null
+    }
     return <Section 
         name='Новости'
         buttonMore={
@@ -31,7 +40,7 @@ export const NewsSection = () => {
                 },
             }}
 				>
-					{NewsData.map((item) => (
+					{news.map((item) => (
 						<SwiperSlide
 							key={item.id}
 							className={classes.Slide}

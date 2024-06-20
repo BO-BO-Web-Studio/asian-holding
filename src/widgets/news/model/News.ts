@@ -1,6 +1,6 @@
 export interface INews  {
     id: number 
-    name: string
+    title: string
     image: string
     description: string 
     date: string

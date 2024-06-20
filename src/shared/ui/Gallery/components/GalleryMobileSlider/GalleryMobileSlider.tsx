@@ -47,7 +47,7 @@ function GalleryMobileSlider({ images, onClick, buttonChildren }: GalleryMobileS
 					clickable: true 
 				}}
 			>
-				{images.map(({ id, url, title }) => (
+				{images.map(({ id, img }) => (
 					<SwiperSlide
 						key={id}
 						className={classes.Item_main_slide}
@@ -63,10 +63,10 @@ function GalleryMobileSlider({ images, onClick, buttonChildren }: GalleryMobileS
 										block: 'nearest'
 									})
 								}}
-								src={url}
-								alt={title}
-								width={116}
-								height={116}
+								src={img}
+								alt={String(id)}
+								width={328}
+								height={220}
 							/>
 							<button 
 								className={classes.show_button} 

@@ -1,17 +1,17 @@
 import { INews } from '@widgets/news/model/News'
 import classes from './news-card.module.scss'
 import { Card } from '@shared/ui/Card'
-import { Date } from '@shared/ui/Date'
+import { FormatDate } from '@shared/ui/Date'
 interface Props {
     card: INews
 }
 export const NewsCard = ({card}: Props) => {
-    return <Card name='news' image={card.image} link='/news/asd' >
+    return <Card name={card.title} image={card.image} link={`news/${card.id}`} >
         <div className={classes.content}>
             <p className={classes.text} >
-                {card.name}
+                {card.title}
             </p>
-            <Date className={classes.date} date={card.date} />
+            <FormatDate className={classes.date} date={card.date} />
         </div>
     </Card>
 }

@@ -7,6 +7,7 @@ import { HandySvg } from 'handy-svg'
 import { IImage } from '@shared/model/IImage'
 import SliderNav from '@shared/ui/SliderNav/SliderNav'
 import clsx from 'clsx'
+import Image from 'next/image'
 
 interface GallerySliderProps {
 	images: IImage[]
@@ -43,17 +44,18 @@ function GallerySlider({ images, onClick }: GallerySliderProps) {
 						}
 					}}
 				>
-					{images.map(({ url, id, title }) => (
+					{images.map(({ img, id }) => (
 						<SwiperSlide
 							key={id}
 							className={classes.Slide}
 						>
-							<img
+							<Image
 								className={classes.Image}
-								src={url}
-								alt={title}
-								width={128}
-								height={128}
+								src={img}
+								alt={String(id)}
+								width={1392}
+								height={620}
+								quality={100}
 							/>
 							<button 
 								className={classes.show_button} 

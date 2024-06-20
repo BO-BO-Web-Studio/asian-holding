@@ -8,6 +8,7 @@ import { Navigation } from '@widgets/header/ui/Navigation'
 import classes from './headerMain.module.scss'
 import { useState } from 'react'
 import { Modal } from '@shared/ui/Modal'
+import useTranslation from 'next-translate/useTranslation'
 
 function HeaderMain() {
   const pathname = usePathname()
@@ -16,7 +17,7 @@ function HeaderMain() {
     close()
     setOpenModal(!isOpenModal)
   }
-
+  const { t } = useTranslation('common')
   return (
     <div className={classes.mainPage}>
       <Wrapper className={classes.wrapper}>

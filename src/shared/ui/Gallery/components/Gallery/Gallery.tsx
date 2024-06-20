@@ -45,7 +45,7 @@ function Gallery({ images, buttons, id, className }: GalleryProps) {
 			<div className={classes.desktop} >
 				<GalleryModal
 					open={open}
-					pictures={images.map(({ url, id }) => ({ id, image: url }))}
+					pictures={images.map(({ img, id }) => ({ id, image: img }))}
 					close={() => setOpen(false)}
 					activeId={initialSlide ?? undefined}
 				/>

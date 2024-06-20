@@ -1,1 +1,0 @@
-export { getQuery } from './get'

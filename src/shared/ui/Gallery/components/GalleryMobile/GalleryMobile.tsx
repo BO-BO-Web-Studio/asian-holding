@@ -30,7 +30,7 @@ function GalleryMobile({
 		<div>
 			<GalleryModal
 				open={open}
-				pictures={images.map(({ url, id }) => ({ id, image: url }))}
+				pictures={images.map(({ img, id }) => ({ id, image: img }))}
 				close={() => setOpen(false)}
 				activeId={initialSlide ?? undefined}
 			/>

@@ -13,7 +13,7 @@ export const ProjectCard = ({item}: Props) => {
             src={item.image} 
             width={432}
             height={432}
-            alt={item.name}
+            alt={String(item.id)}
             />
         <div className={classes.content} >
             <div className={classes.body}>
@@ -30,14 +30,14 @@ export const ProjectCard = ({item}: Props) => {
                     </p>
                 </div>
                 <h3 className={classes.title} >
-                    {item.name}
+                    {item.title}
                 </h3>
                 <div className={classes.items} >
                     <div className={classes.item}>
-                        <p className={classes.item_text}>{item.class}</p>
+                        <p className={classes.item_text}>{item.type}</p>
                     </div>
                     <div className={classes.item}>
-                        <p className={classes.item_text}>{item.apartments} квартир</p>
+                        <p className={classes.item_text}>{item.quantity_rooms}</p>
                     </div>
                 </div>
             </div>

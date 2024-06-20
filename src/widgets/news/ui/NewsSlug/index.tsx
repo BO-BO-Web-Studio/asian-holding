@@ -3,19 +3,32 @@ import classes from './news-slug.module.scss'
 import { Breadcrumbs } from '@shared/ui/Breadcrumbs'
 import { Section } from '@shared/ui/Section'
 import Image from 'next/image'
-import { Date } from '@shared/ui/Date'
-import { NewsData } from '@widgets/news/const/newsData'
-import { NewsCard } from '../NewsCard'
+import { FormatDate } from '@shared/ui/Date'
+// import { NewsData } from '@widgets/news/const/newsData'
+// import { NewsCard } from '../NewsCard'
 import { useWindowSize } from '@uidotdev/usehooks'
-export const NewsSlug = () => {
+import { INews } from '@widgets/news/model/News'
+import { NewsCard } from '../NewsCard'
 
+interface Props {
+    news?: INews[] | null
+    newsSlug?: INews | null
+}
+
+export const NewsSlug = ({news, newsSlug}: Props) => {
     const size = useWindowSize()
 
+    if(!newsSlug) {
+        return null
+    }
+
+    console.log(news)
+    // debugger
     let amountItems = size.width && size.width > 768 ? 3 : 4 
     return <div className={classes.news}>
         <Section 
             className={classes.section}
-            name='Выбранный нами инновационный путь определил дальнейшее развитие'
+            name={newsSlug.title}
             mainTitle
             breadcrumbs={ 
                 <Breadcrumbs
@@ -39,18 +52,19 @@ export const NewsSlug = () => {
         <Wrapper>
             <div className={classes.body} >
                 <div className={classes.bl_text} >
-                    <p>
+                   {newsSlug.description}
+                    {/* <p>
                         Мы стремимся создавать объекты, которые не только визуально привлекательны, но и обеспечивают комфорт и удобство для их будущих обитателей. Наши проекты разрабатываются с учетом современных потребностей и стандартов жизни. Мы стремимся создавать объекты, которые не только визуально привлекательны, но и обеспечивают комфорт и удобство для их будущих обитателей. Наши проекты разрабатываются с учетом современных потребностей и стандартов жизни. Мы стремимся создавать объекты, которые не только визуально привлекательны, но и обеспечивают комфорт и удобство для их будущих обитателей. Наши проекты разрабатываются с учетом современных потребностей и стандартов жизни. Мы стремимся создавать объекты, которые не только визуально привлекательны, но и обеспечивают комфорт и удобство для их будущих обитателей. 
                     </p>
                     <p>
                         Наши проекты разрабатываются с учетом современных потребностей и стандартов жизни. Мы стремимся создавать объекты, которые не только визуально привлекательны, но и обеспечивают комфорт и удобство для их будущих обитателей. Наши проекты разрабатываются с учетом современных потребностей и стандартов жизни. Мы стремимся создавать объекты, которые не только визуально привлекательны, но и обеспечивают комфорт и удобство для их будущих обитателей. Наши проекты разрабатываются с учетом современных потребностей и стандартов жизни. Мы стремимся создавать объекты, которые не только визуально привлекательны, но и обеспечивают комфорт и удобство для их будущих обитателей. Наши проекты разрабатываются с учетом современных потребностей и стандартов жизни.
-                    </p>
+                    </p> */}
                 </div>
-                <Date date='22 декабря 2023' />
+                <FormatDate date={newsSlug.date} />
             </div>
 
             <div className={classes.items} >
-                {NewsData.slice(0, amountItems).map((item) => <NewsCard key={item.id} card={item} />)}
+                {news && news?.slice(0, amountItems).map((item) => <NewsCard key={item.id} card={item} />)}
             </div>
         </Wrapper>
     </div>

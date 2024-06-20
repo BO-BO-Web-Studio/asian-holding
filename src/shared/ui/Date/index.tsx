@@ -5,7 +5,22 @@ interface Props {
     date: string 
     className?: string 
 }
-export const Date = ({date, className}: Props) => {
+export const FormatDate = ({date, className}: Props) => {
+
+
+    if(!date) {
+        return null
+    }
+    const formatter = new Intl.DateTimeFormat('ru-RU', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+    });
+    
+    const formatDate= new Date(date);
+    
+    const formattedDate = formatter.format(formatDate);
+    
     return  <div className={clsx(classes.body, className)}>
         <HandySvg 
             src='/assets/icons/time.svg' 
@@ -14,7 +29,7 @@ export const Date = ({date, className}: Props) => {
             alt={'asd'}
         />
         <p className={classes.date} >
-            {date}
+            {formattedDate}
         </p>
     </div>
 }

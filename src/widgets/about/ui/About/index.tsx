@@ -9,35 +9,19 @@ import { NewsSection } from '@widgets/news'
 const galleryDate: IGallery[] = [
     {
         id: 1,
-        title: 'string',
-        url: '/assets/images/gallery_1.png',
-        order: null,
-        created_at: 'string',
-        updated_at: 'string'
+        img: '/assets/images/gallery_1.png',
     },
     {
         id: 2,
-        title: 'string',
-        url: '/assets/images/gallery_1.png',
-        order: null,
-        created_at: 'string',
-        updated_at: 'string'
+        img: '/assets/images/gallery_1.png',
     },
     {
         id: 3,
-        title: 'string',
-        url: '/assets/images/gallery_1.png',
-        order: null,
-        created_at: 'string',
-        updated_at: 'string'
+        img: '/assets/images/gallery_1.png',
     },
     {
         id: 4,
-        title: 'string',
-        url: '/assets/images/gallery_1.png',
-        order: null,
-        created_at: 'string',
-        updated_at: 'string'
+        img: '/assets/images/gallery_1.png',
     },
 ]
 
@@ -66,9 +50,9 @@ export const About = () => {
         nameProps={{className: classes.bl_title}}
         >
             <Gallery
-                    className={classes.gallery}
-                    images={galleryDate}
-                    />
+                className={classes.gallery}
+                images={galleryDate}
+                />
     </Section>
     <AboutContent />
     <ProjectsSection />
