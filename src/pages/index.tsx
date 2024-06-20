@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import { MainBanner } from "@widgets/mainBanner";
 import { PhotoGallery } from "@widgets/photoGallery";
 import { SearchBar } from "@widgets/searchBar";

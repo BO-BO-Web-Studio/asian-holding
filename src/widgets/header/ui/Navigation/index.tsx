@@ -33,13 +33,13 @@ function Navigation({ setModal, isOpenModal }: Props) {
       <div className={clsx(classes.menu, isOpen && classes.open)}>
         <div className={classes.logo_bl}>
           <div className={classes.logo} >
-                <Image
-                  src={`/assets/icons/logo-main.svg`}
-                  alt="iontravel"
-                  width={58}
-                  height={50}
-                  priority
-                />
+              <Image
+                src={`/assets/icons/logo-main.svg`}
+                alt="iontravel"
+                width={58}
+                height={50}
+                priority
+              />
           </div>
           <Burger />
         </div>
@@ -53,7 +53,7 @@ function Navigation({ setModal, isOpenModal }: Props) {
                 href={href}
                 className={clsx(
                   classes.link,
-                  pathname === href && classes.active,
+                  pathname.slice(1, pathname.length-1) === href && classes.active,
                 )}
                 onClick={close}
               >

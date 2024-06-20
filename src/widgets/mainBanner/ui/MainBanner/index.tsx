@@ -17,8 +17,7 @@ interface Props {
     banners?: IMainSlide[]
 }
 export const MainBanner = ({banners}: Props) => {
-    console.log(banners)
-    // debugger
+
     if(!banners) {
         return null
     }

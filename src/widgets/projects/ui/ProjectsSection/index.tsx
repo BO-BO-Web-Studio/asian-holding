@@ -20,11 +20,11 @@ export const ProjectsSection = ({residences}: Props) => {
         buttonMore={<ButtonMore name='Смотреть все проекты' link='/projects' />}
         >
         {size.width && size.width > 768 ?  <div className={classes.items} >
-            {residences.map((item) => <>
-                <div className={classes.item}>
+            {residences.map((item) => <div key={item.id}>
+                <div className={classes.item} >
                     <ProjectCard item={item} />
                 </div>
-            </>)}
+            </div>)}
         </div> : <ProjectsMobile items={residences} /> }
     </Section>
 }

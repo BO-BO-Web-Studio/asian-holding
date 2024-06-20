@@ -22,8 +22,6 @@ export const NewsSlug = ({news, newsSlug}: Props) => {
         return null
     }
 
-    console.log(news)
-    // debugger
     let amountItems = size.width && size.width > 768 ? 3 : 4 
     return <div className={classes.news}>
         <Section 

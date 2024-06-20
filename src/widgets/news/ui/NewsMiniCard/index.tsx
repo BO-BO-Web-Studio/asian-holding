@@ -9,7 +9,6 @@ interface Props {
 
 export const NewsMiniCard = ({item}: Props) => {
 
-    console.log(item)
     return <Link href={`/news/${item.id}`} className={classes.card} >
         <div className={classes.body} >
             <div className={classes.bl_title} >

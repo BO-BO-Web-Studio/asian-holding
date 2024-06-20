@@ -4,16 +4,16 @@
 @include font-face(
   $name: 'Onest',
   $weight: 400,
-  $woff: '/assets/fonts/Onest-Regular.woff'
+  $ttf: '/assets/fonts/Onest-Regular.ttf'
 );
 @include font-face(
   $name: 'Onest',
   $weight: 500,
-  $woff: '/assets/fonts/Onest-Medium.woff'
+  $ttf: '/assets/fonts/Onest-Medium.ttf'
 );
 @include font-face(
   $name: 'Onest',
   $weight: 700,
-  $woff: '/assets/fonts/Onest-Bold.woff'
+  $ttf: '/assets/fonts/Onest-Bold.ttf'
 );
 
