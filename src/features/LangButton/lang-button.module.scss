@@ -6,6 +6,10 @@
   width: max-content;
   z-index: 2;
   width: 100%;
+  margin-right: 28px;
+  @media (max-width: $tablet) {
+    margin: 0;
+  }
 }
 .items {
   display: flex;

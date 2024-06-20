@@ -2,8 +2,14 @@ import Image from 'next/image'
 import classes from './project-info.module.scss'
 import { HandySvg } from 'handy-svg'
 import { Button } from '@shared/ui/Button'
+import { IProjectCard } from '@widgets/projects/model/IProjectCard'
+import Link from 'next/link'
 
-export const ProjectInfo = () => {
+interface Props {
+    project?: IProjectCard | null
+}
+
+export const ProjectInfo = ({project}: Props) => {
     return <div className={classes.wrapper}>
         <div className={classes.body} >
             <div className={classes.bl_img} >
@@ -15,33 +21,33 @@ export const ProjectInfo = () => {
                 />
             </div>
             <ul className={classes.items} >
-                <li className={classes.item} >
+                {project?.phone && <Link href={`tel:${project?.phone}`} className={classes.item} >
                     <HandySvg 
                         src='/assets/icons/phone_2.svg' 
                         width={20}
                         height={20}
                         alt='logo_company'
                         />
-                        <p>+992 900 000 00 00</p>
-                </li>
-                <li className={classes.item} >
+                    <p>{project?.phone}</p>
+                </Link>}
+                {project?.address && <li className={classes.item} >
                     <HandySvg 
                         src='/assets/icons/location.svg' 
                         width={20}
                         height={20}
                         alt='logo_company'
                         />
-                    <p>Ул.Испечак 12</p>
-                </li>
-                <li className={classes.item} >
+                    <p>{project?.address}</p>
+                </li>}
+                {project?.completion_date && <li className={classes.item} >
                     <HandySvg 
                         src='/assets/icons/calendar.svg' 
                         width={20}
                         height={20}
                         alt='logo_company'
                         />
-                    <p>Сдача квартир I квартал 2024</p>
-                </li>
+                    <p>{project?.completion_date}</p>
+                </li>}
             </ul>
             <Button className={classes.button} fullWidth >
                 Выбрать квартиру

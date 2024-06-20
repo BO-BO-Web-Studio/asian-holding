@@ -63,8 +63,11 @@
 
 .item {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     grid-gap: 8px;
+    text-decoration: none;
+
     svg {
         fill: none;
         stroke: none;

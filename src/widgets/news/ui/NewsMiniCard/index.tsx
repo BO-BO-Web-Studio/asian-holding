@@ -1,6 +1,5 @@
 import { INews } from '@widgets/news/model/News'
 import classes from './news-mini-card.module.scss'
-import { HandySvg } from 'handy-svg'
 import Link from 'next/link'
 import { FormatDate } from '@shared/ui/Date'
 
@@ -9,6 +8,8 @@ interface Props {
 }
 
 export const NewsMiniCard = ({item}: Props) => {
+
+    console.log(item)
     return <Link href={`/news/${item.id}`} className={classes.card} >
         <div className={classes.body} >
             <div className={classes.bl_title} >

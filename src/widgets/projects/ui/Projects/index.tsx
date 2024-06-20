@@ -4,12 +4,14 @@ import classes from './projects.module.scss'
 import { Breadcrumbs } from "@shared/ui/Breadcrumbs"
 import { Wrapper } from "@shared/ui/Wrapper"
 import { IProjectCard } from "@widgets/projects/model/IProjectCard"
+import { INews } from "@widgets/news/model/News"
 
 interface Props {
     residences?: IProjectCard[]
+    news?: INews[]
 }
 
-export const Projects = ({residences}: Props) => {
+export const Projects = ({residences, news}: Props) => {
     return <div className={classes.projects}>
     <Wrapper>
         <Breadcrumbs
@@ -19,6 +21,6 @@ export const Projects = ({residences}: Props) => {
             />
     </Wrapper>
     <ProjectsSection residences={residences} />
-    <NewsSection/>
+    <NewsSection news={news} />
     </div>
 }

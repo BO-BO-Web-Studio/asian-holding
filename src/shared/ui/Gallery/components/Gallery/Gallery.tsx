@@ -17,6 +17,7 @@ export interface GalleryProps {
 }
 
 function Gallery({ images, buttons, id, className }: GalleryProps) {
+	
 	const [activeId, setActiveId] = useState<number | null>(
 		getMinId(images.map(({ id }) => id))
 	)

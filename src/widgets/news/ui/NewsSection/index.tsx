@@ -27,8 +27,8 @@ export const NewsSection = ({news}: Props) => {
             spaceBetween={20}
             breakpoints={{
                 1360: {
-                    spaceBetween: 48,
-                    slidesPerView: 4
+                    spaceBetween: 40,
+                    slidesPerView: 4.1
                 },
                 1024: {
                     spaceBetween: 24,

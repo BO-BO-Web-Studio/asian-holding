@@ -2,5 +2,7 @@
 @import 'src/@app/styles/mixins';
 
 .Swiper {
-    padding: 1px;
+    @media (max-width: $tablet) {
+        // padding: 1px;   
+    }
 }

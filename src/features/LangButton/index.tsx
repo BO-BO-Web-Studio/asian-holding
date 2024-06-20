@@ -54,7 +54,12 @@ export const LangButton = () => {
           classes.item,
           locale == localeActive && classes.active
         )} >
-          <Link className={classes.lang} href={router.asPath} locale={locale}>
+          <Link 
+            className={classes.lang} 
+            href={router.asPath} 
+            locale={locale}
+            onMouseDown={() => setActiveModal(false)}
+            >
             {langsData.map((item) => {
               if(item.id == locale) {
                 return item.name

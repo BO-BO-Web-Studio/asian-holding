@@ -5,6 +5,7 @@ import { Gallery } from "@shared/ui/Gallery"
 import { IGallery } from "@shared/model/IGallery"
 import { ProjectInfo } from '../ProjectInfo'
 import clsx from 'clsx'
+import { IProjectCard } from '@widgets/projects/model/IProjectCard'
 
 const galleryDate: IGallery[] = [
     {
@@ -24,11 +25,18 @@ const galleryDate: IGallery[] = [
         img: '/assets/images/gallery_1.png'
     },
 ]
-export const ProjectsSlug = () => {
+
+interface Props {
+    project?: IProjectCard | null
+}
+
+
+export const ProjectsSlug = ({project}: Props) => {
+
     return <div className={classes.wrapper}>
         <Section 
             className={classes.section}
-            name='Живи и Радуйся'
+            name={project?.title}
             mainTitle
             breadcrumbs={ 
                 <Breadcrumbs
@@ -40,45 +48,37 @@ export const ProjectsSlug = () => {
                 includeHome
                 /> }
             >
-                <Gallery
+                {project?.gallery_images && <Gallery
                     className={classes.gallery}
-                    images={galleryDate}
-                    />
+                    images={project?.gallery_images}
+                    />}
                 <div className={classes.content}>
                     <div className={classes.left} >
                         <div className={classes.body} >
                             <div className={classes.items} >
-                                <div className={classes.item}>
+                                {project?.type && <div className={classes.item}>
                                     <p>
-                                        Стандарт-класс
+                                        {project?.type}
                                     </p>
-                                </div>
-                                <div className={classes.item}>
+                                </div>}
+                                {project?.quantity_rooms && <div className={classes.item}>
                                     <p>
-                                        500 квартир
+                                        {project?.quantity_rooms}
                                     </p>
-                                </div>
-                                <div className={clsx(classes.item, classes.item_status)}>
+                                </div>}
+                                {project?.status && <div className={clsx(classes.item, classes.item_status)}>
                                     <p>
-                                        Стандарт-класс
+                                        {project?.status}
                                     </p>
-                                </div>
+                                </div>}
                             </div>
                             <div className={classes.bl_text} >
-                                <p>
-                                    Живи и Радуйся - Lorem ipsum dolor sit amet consectetur. Ut mollis tristique volutpat in consequat in ultrices ac elementum. Sit ullamcorper habitasse vitae pellentesque arcu id morbi. Mi tellus tincidunt metus ut viverra mattis. Ullamcorper mattis bibendum sit sagittis pellentesque odio gravida ultricies et. At bibendum sit turpis id venenatis risus. Diam faucibus ullamcorper ut at. Augue vitae erat dolor cras in odio felis risus eget. In aliquam netus elementum ultrices accumsan eu mollis arcu auctor tristique.
-                                </p>
-                                <h5>
-                                    Преимащество
-                                </h5>
-                                <p>
-                                    Живи и Радуйся - Lorem ipsum dolor sit amet consectetur. Ut mollis tristique volutpat in consequat in ultrices ac elementum. Sit ullamcorper habitasse vitae pellentesque arcu id morbi. Mi tellus tincidunt metus ut viverra mattis. Ullamcorper mattis bibendum sit sagittis pellentesque odio gravida ultricies et. At bibendum sit turpis id venenatis risus. Diam faucibus ullamcorper ut at. Augue vitae erat dolor cras in odio felis risus eget. In aliquam netus elementum ultrices accumsan eu mollis arcu auctor tristique.
-                                </p>
+                                {project?.description}
                             </div>
                         </div>
                     </div>
                     <div className={classes.right}>
-                        <ProjectInfo />
+                        <ProjectInfo project={project} />
                     </div>
                 </div>
         </Section>
