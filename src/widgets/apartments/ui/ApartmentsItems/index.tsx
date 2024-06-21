@@ -1,14 +1,13 @@
-import { IApartment } from '@widgets/apartments/model/Apartment'
 import classes from './apartments-items.module.scss'
-import { Wrapper } from '@shared/ui/Wrapper'
 import { ApartmentCard } from '../ApartmentCard'
+import { IResidences } from '@widgets/projects/model/IProjectCard'
 interface Props {
-    apartments: IApartment[]
+    apartments?: IResidences[] | null
 }
 export const ApartmentsItems = ({apartments}: Props) => {
     return <div className={classes.wrapper} >
         <div className={classes.items} >
-            {apartments.map((item) => 
+            {apartments && apartments.map((item) => 
                 <ApartmentCard key={item.id} apartment={item} />
             )}
         </div>

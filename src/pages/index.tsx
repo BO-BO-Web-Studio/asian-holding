@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { MainBanner } from "@widgets/mainBanner";
 import { PhotoGallery } from "@widgets/photoGallery";
-import { SearchBar } from "@widgets/searchBar";
+import { IStatus, SearchBar } from "@widgets/searchBar";
 import { ProjectsSection } from "@widgets/projects";
 import { NewsSection } from "@widgets/news";
 import 'i18next'
@@ -15,6 +15,7 @@ interface Props {
 	banners?: IMainSlide[]
 	news?: INews[]
 	residences?: IProjectCard[]
+	status?: IStatus[]
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ locale, query }) => {
@@ -22,18 +23,20 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ locale, qu
 	const banners = await getFetcher(`/main_banner/get`, locale)
 	const news = await getFetcher(`/news/get`, locale)
 	const residences = await getFetcher(`/residences/get`, locale)
+	const status = await getFetcher(`/status/get`, locale)
 	
 	
 	return {
 		props: {
 			banners: banners,
 			news: news.data.news,
-			residences: residences.data.res
+			residences: residences.data.res,
+			status: status
 		}
 	}
 }
 
-export default function Home({ banners, news, residences }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home({ banners, news, residences, status }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
 	return (
 		<>
@@ -46,7 +49,7 @@ export default function Home({ banners, news, residences }: InferGetServerSidePr
 			<main >
         		<MainBanner banners={banners} />
 				<ProjectsSection residences={residences} />
-				<SearchBar />
+				<SearchBar residences={residences} status={status} />
 				<PhotoGallery residences={residences} />
 				<NewsSection news={news} />
 			</main>

@@ -16,7 +16,7 @@ interface Props {
 export const getServerSideProps: GetServerSideProps<Props> = async ({ locale, query }) => {
 	
 	const residences = await getFetcher(`/residences/get`, locale)
-  const news = await getFetcher(`/news/get`, locale)
+  	const news = await getFetcher(`/news/get`, locale)
 	
 	
 	return {

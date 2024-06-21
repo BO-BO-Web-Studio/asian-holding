@@ -7,6 +7,8 @@ import { RadioItems } from '@shared/ui/RadioItems'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useSearchStore } from '@widgets/searchBar/model/searchStore'
+import { IProjectCard } from '@widgets/projects/model/IProjectCard'
+import { IStatus } from '@widgets/searchBar/model/searchBar'
 const complexData = [
     {
         id: 1,
@@ -39,7 +41,13 @@ const apartmentData = [
         value: '4к+'
     },
 ]
-export const SearchMain = () => {
+
+interface Props {
+    residences?: IProjectCard[] | null
+    status?: IStatus[] | null
+}
+
+export const SearchMain = ({residences, status}: Props) => {
     const searchParams = useSearchParams();
     const [activeRoom, setActiveRoom] = useState<number>(1)
     const [activeComplext, setActiveComplext] = useState<number[]>([0])
@@ -62,10 +70,10 @@ export const SearchMain = () => {
                 query.push(`residences_id=${item}`)
             })
         }
-        if(lowerValue) {
+        if(lowerValue !== undefined && lowerValue !== null) {
             query.push(`price_min=${lowerValue}`)
         }
-        if(upperValue) {
+        if(upperValue !== undefined && lowerValue !== null) {
             query.push(`price_max=${upperValue}`)
         }
         if(activeStatus.toString()) {
@@ -78,7 +86,7 @@ export const SearchMain = () => {
 
 
     useEffect(() => {
-        const complex = searchParams.getAll('complex')
+        const complex = searchParams.getAll('residences_id')
         if(complex?.length !== 0) {
             setActiveComplext(complex.map(Number))
         } else {
@@ -91,12 +99,15 @@ export const SearchMain = () => {
         } else {
             setActiveStatus([])
         }
-
+        setActiveRoom(searchParams.get("room_count") ? Number(searchParams.get("room_count")) : 1)
         setLowerValue(searchParams.get("price_min") ? Number(searchParams.get("price_min")) : 10000)
         setUpperValue(searchParams.get("price_max") ? Number(searchParams.get("price_max")) : 356000)
     }, [searchParams])
 
-
+    if(!residences) {
+        return null
+    }
+    // debugger
     return  <div className={classes.body} >
     <h3 className={classes.title} >
         Фильтр
@@ -114,8 +125,8 @@ export const SearchMain = () => {
             className={classes.dropdown}
             label="Все комплексы"
             // multiple
-            items={complexData.map(({ name, id }) => ({
-                id, label: name
+            items={residences?.map((item) => ({
+                id: item.id, label: item.title
             }))}
             state={activeComplext}
             setState={setActiveComplext}
@@ -130,16 +141,16 @@ export const SearchMain = () => {
         />
     </div>
     <div className={classes.item_dropdown_2} > 
-        <Dropdown
+        {status && <Dropdown
             className={classes.dropdown}
-            label="Построено"
+            label="Статус"
             // multiple
-            items={complexData.map(({ name, id }) => ({
-                id, label: name
+            items={status?.map((item) => ({
+                id: item.id, label: item.title
             }))}
             state={activeStatus}
             setState={setActiveStatus}
-        />
+        />}
     </div>
     <div className={classes.bl_button} >
         <Button

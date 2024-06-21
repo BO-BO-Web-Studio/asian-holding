@@ -5,9 +5,16 @@ import { useSearchStore } from "@widgets/searchBar/model/searchStore"
 import { Modal } from "@shared/ui/Modal"
 import { HandySvg } from "handy-svg"
 import { useWindowSize } from "@uidotdev/usehooks";
+import { IProjectCard } from "@widgets/projects/model/IProjectCard"
+import { IStatus } from "@widgets/searchBar/model/searchBar"
 
+interface Props {
+    residences?: IProjectCard[] | null
+    status?: IStatus[]
+}
 
-export const SearchBar = () => {
+export const SearchBar = ({residences, status}: Props) => {
+
     const { isOpen, toggle } = useSearchStore(({ isOpen, toggle }) => ({
         isOpen,
         toggle,
@@ -28,13 +35,13 @@ export const SearchBar = () => {
                     />
             </button>}
         >
-        {size.width != null && size.width > 768 && <SearchMain />}
+        {size.width != null && size.width > 768 && <SearchMain residences={residences} status={status} />}
         <Modal
             isOpen={isOpen}
             close={toggle}
             isShowCloseButton={true}
         >
-            <SearchMain />
+            <SearchMain residences={residences} status={status} />
         </Modal>
     </Section>
 }

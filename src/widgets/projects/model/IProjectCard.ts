@@ -16,3 +16,15 @@ export interface IProjectCard {
     type: string,
     type_color: string
 }
+
+export interface IResidences {
+    area: string,
+    description: string | null,
+    floor: number,
+    id: number,
+    image: string,
+    price: string,
+    residence: IProjectCard | null
+    room_count: number,
+    title: string
+}

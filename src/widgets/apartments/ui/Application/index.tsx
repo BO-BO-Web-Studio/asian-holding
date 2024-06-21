@@ -4,9 +4,10 @@ import Dropdown from "@shared/ui/Dropdown/Dropdown"
 import { useState } from "react"
 import { Button } from "@shared/ui/Button"
 import Image from "next/image"
+import { IResidences } from "@widgets/projects/model/IProjectCard"
 
 interface Props {
-    apartment: IApartment
+    apartment: IResidences
     close(): void
 }
 const complexData = [
@@ -36,8 +37,8 @@ export const Application = ({apartment, close}: Props) => {
                 <Image 
                     width={500}
                     height={600}
-                    src={apartment.img} 
-                    alt={apartment.name}
+                    src={apartment.image} 
+                    alt={apartment.title}
                     />
             </div>
         </div>
@@ -46,7 +47,7 @@ export const Application = ({apartment, close}: Props) => {
                 <h2 className={classes.title} >Оставить заявку</h2>
                 <Dropdown 
                     className={classes.dropdown}
-                    label="Все комплексы"
+                    label="Полная предоплата"
                     multiple
                     items={complexData.map(({ name, id }) => ({
                         id, label: name
@@ -55,14 +56,14 @@ export const Application = ({apartment, close}: Props) => {
                     setState={setPaymOntoptions}
                 />
                 <div className={classes.info} >
-                    <h4 className={classes.info_title} >{apartment.name}</h4>
+                    <h4 className={classes.info_title} >{apartment.title}</h4>
                     <ul className={classes.items}>
                         <li className={classes.item}>
                             <p className={classes.span_1} >
                                 Общая площадь
                             </p>
                             <p className={classes.span_2} >
-                                {apartment.square}
+                                {apartment.area}
                             </p>
                         </li>
                         <li className={classes.item}>
@@ -78,7 +79,7 @@ export const Application = ({apartment, close}: Props) => {
                                 Жилой комплекс
                             </p>
                             <p className={classes.span_2} >
-                                {apartment.block}
+                                {apartment.floor}
                             </p>
                         </li>
                     </ul>

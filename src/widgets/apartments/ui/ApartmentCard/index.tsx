@@ -1,12 +1,12 @@
-import { IApartment } from '@widgets/apartments/model/Apartment'
 import classes from './apartment-card.module.scss'
 import { Button } from '@shared/ui/Button'
 import { Modal } from '@shared/ui/Modal'
 import { useState } from 'react'
 import { Application } from '../Application'
 import Image from 'next/image'
+import { IResidences } from '@widgets/projects/model/IProjectCard'
 interface Props {
-    apartment: IApartment
+    apartment: IResidences
 }
 export const ApartmentCard = ({apartment}: Props) => {
     const [isOpenModal, setOpenModal] = useState(false)
@@ -19,17 +19,17 @@ export const ApartmentCard = ({apartment}: Props) => {
            <div className={classes.bl_img} >
             <Image 
                 className={classes.img}
-                src={apartment.img}
+                src={apartment.image}
                 width={313}
                 height={200}
-                alt={apartment.name}
+                alt={apartment.title}
                 />
            </div>
         </div>
         <div className={classes.content} >
             <div className={classes.body} >
                 <h3 className={classes.title}>
-                    {apartment.name}
+                    {apartment.title}
                 </h3>
                 <ul className={classes.items}>
                     <li className={classes.item}>
@@ -37,7 +37,7 @@ export const ApartmentCard = ({apartment}: Props) => {
                             Общая площадь
                         </p>
                         <p className={classes.span_2} >
-                            {apartment.square}
+                            {apartment.area}
                         </p>
                     </li>
                     <li className={classes.item}>
@@ -53,7 +53,7 @@ export const ApartmentCard = ({apartment}: Props) => {
                             Жилой комплекс
                         </p>
                         <p className={classes.span_2} >
-                            {apartment.block}
+                            {apartment.floor}
                         </p>
                     </li>
                 </ul>

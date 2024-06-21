@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import classes from './radio-items.module.scss'
 interface Props {
     name: string
@@ -15,7 +16,7 @@ export const RadioItems = ({name, items, activeRoom, setActiveRoom}:Props) => {
     return <div className={classes.items}>
         {items.map((item, index) => 
             <div 
-                className={classes.item_input} 
+                className={clsx(classes.item_input, activeRoom == item.id && classes.active)} 
                 key={item.id}
                 onClick={() => setActiveRoom(item.id)}
                 >
