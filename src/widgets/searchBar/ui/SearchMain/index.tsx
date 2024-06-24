@@ -65,7 +65,7 @@ export const SearchMain = ({residences, status}: Props) => {
             query.push(`room_count=${activeRoom}`)
         }
 
-        if(activeComplext.toString()) {
+        if(activeComplext.toString() && activeComplext[0] !== 0) {
             activeComplext.forEach((item) => {
                 query.push(`residence_id=${item}`)
             })
@@ -76,7 +76,7 @@ export const SearchMain = ({residences, status}: Props) => {
         if(upperValue !== undefined && lowerValue !== null) {
             query.push(`price_max=${upperValue}`)
         }
-        if(activeStatus.toString()) {
+        if(activeStatus.toString() && activeStatus[0] !== 0) {
             activeStatus.forEach((item) => {
                 query.push(`status=${item}`)
             })
@@ -107,7 +107,6 @@ export const SearchMain = ({residences, status}: Props) => {
     if(!residences) {
         return null
     }
-    // debugger
     return  <div className={classes.body} >
     <h3 className={classes.title} >
         Фильтр
@@ -124,10 +123,9 @@ export const SearchMain = ({residences, status}: Props) => {
         <Dropdown
             className={classes.dropdown}
             label="Все комплексы"
-            // multiple
-            items={residences?.map((item) => ({
+            items={[{id: 0, label: 'Не выбрать'},...residences?.map((item) => ({
                 id: item.id, label: item.title
-            }))}
+            }))]}
             state={activeComplext}
             setState={setActiveComplext}
         />
@@ -144,10 +142,9 @@ export const SearchMain = ({residences, status}: Props) => {
         {status && <Dropdown
             className={classes.dropdown}
             label="Статус"
-            // multiple
-            items={status?.map((item) => ({
+            items={[{id: 0, label: 'Не выбрать'} , ...status?.map((item) => ({
                 id: item.id, label: item.title
-            }))}
+            }))]}
             state={activeStatus}
             setState={setActiveStatus}
         />}

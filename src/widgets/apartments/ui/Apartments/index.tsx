@@ -51,7 +51,7 @@ export const Apartments = ({apartments, residences, status}: Props) => {
   if (activeRoom) {
     url += `&room_count=${activeRoom}`;
   }
-  if (activeComplext) {
+  if (activeComplext && activeComplext !== 0 ) {
     url += `&residence_id=${activeComplext}`;
   }
   if (lowerValue !== undefined && lowerValue !== null) {
@@ -60,12 +60,12 @@ export const Apartments = ({apartments, residences, status}: Props) => {
   if (upperValue !== undefined && upperValue !== null) {
     url += `&price_max=${upperValue}`;
   }
-  if (activeStatus) {
+  if (activeStatus && activeStatus !== 1) {
     url += `&status=${activeStatus}`;
   }
 
   const {data, isLoading, isError} = useQuery<IResidences[]>(['apartments', lowerValue, upperValue, activeRoom, activeComplext, activeStatus], () => getFetcher(url))
-  console.log(url)
+
   if(isError && isLoading) {
     return null
   }
