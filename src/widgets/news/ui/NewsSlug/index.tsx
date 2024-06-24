@@ -9,6 +9,7 @@ import { FormatDate } from '@shared/ui/Date'
 import { useWindowSize } from '@uidotdev/usehooks'
 import { INews } from '@widgets/news/model/News'
 import { NewsCard } from '../NewsCard'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
     news?: INews[] | null
@@ -17,6 +18,7 @@ interface Props {
 
 export const NewsSlug = ({news, newsSlug}: Props) => {
     const size = useWindowSize()
+    const { t } = useTranslation('common')
 
     if(!newsSlug) {
         return null
@@ -32,8 +34,8 @@ export const NewsSlug = ({news, newsSlug}: Props) => {
                 <Breadcrumbs
                 className={classes.breadcrumbs}
                 items={[
-                    {label: 'Новости', link: '/news'},
-                    {label: 'Подробнее', isActive: true}
+                    {label: (t('news')), link: '/news'},
+                    {label: (t('more')), isActive: true}
                 ]}
                 includeHome
                 /> }
