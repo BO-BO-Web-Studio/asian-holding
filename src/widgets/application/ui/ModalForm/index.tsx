@@ -12,6 +12,10 @@ import { BarLoader } from "@shared/ui/loaders/BarLoader";
 import { Alert } from "@shared/ui/Alert";
 import { useApplicationStore } from "@widgets/application/model/applicationStore";
 
+interface Props {
+  isOpen: boolean
+  close(): void
+}
 interface FormData {
   name: string
   number: string

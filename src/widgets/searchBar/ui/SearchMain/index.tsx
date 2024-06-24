@@ -67,7 +67,7 @@ export const SearchMain = ({residences, status}: Props) => {
 
         if(activeComplext.toString()) {
             activeComplext.forEach((item) => {
-                query.push(`residences_id=${item}`)
+                query.push(`residence_id=${item}`)
             })
         }
         if(lowerValue !== undefined && lowerValue !== null) {
@@ -86,7 +86,7 @@ export const SearchMain = ({residences, status}: Props) => {
 
 
     useEffect(() => {
-        const complex = searchParams.getAll('residences_id')
+        const complex = searchParams.getAll('residence_id')
         if(complex?.length !== 0) {
             setActiveComplext(complex.map(Number))
         } else {

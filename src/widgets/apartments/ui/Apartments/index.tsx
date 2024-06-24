@@ -31,8 +31,8 @@ export const Apartments = ({apartments, residences, status}: Props) => {
     if(searchParams.get("room_count")) {
       setActiveRoom(Number(searchParams.get("room_count")))
     }
-    if(searchParams.get("residences_id")) {
-      setActiveComplext(Number(searchParams.get("residences_id")))
+    if(searchParams.get("residence_id")) {
+      setActiveComplext(Number(searchParams.get("residence_id")))
     }
     if(searchParams.get("price_min")) {
       setLowerValue(Number(searchParams.get("price_min")))
@@ -52,7 +52,7 @@ export const Apartments = ({apartments, residences, status}: Props) => {
     url += `&room_count=${activeRoom}`;
   }
   if (activeComplext) {
-    url += `&residences_id=${activeComplext}`;
+    url += `&residence_id=${activeComplext}`;
   }
   if (lowerValue !== undefined && lowerValue !== null) {
     url += `&price_min=${lowerValue}`;

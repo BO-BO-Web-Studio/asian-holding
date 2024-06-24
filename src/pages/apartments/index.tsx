@@ -28,7 +28,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ locale, qu
 }
 
 export default function Page({apartments, residences, status}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-console.log('asd', residences)
     return <>
         <Head>
           <title>Квартиры | Asian Holding</title>

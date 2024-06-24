@@ -2,15 +2,13 @@
 import { useEffect, useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import useTranslation from 'next-translate/useTranslation';
-import classes from './form.module.scss'
+import classes from './apartment-form.module.scss'
 import toast from "react-hot-toast";
 import { FetchStatus } from "@shared/model";
-import { Modal } from "@shared/ui/Modal";
 import { Input } from "@shared/ui/Input";
 import { Button } from "@shared/ui/Button";
 import { BarLoader } from "@shared/ui/loaders/BarLoader";
 import { Alert } from "@shared/ui/Alert";
-import { useApplicationStore } from "@widgets/application/model/applicationStore";
 
 interface FormData {
   name: string
@@ -18,7 +16,7 @@ interface FormData {
   gmail: string
 }
 
-export const Form = () => {
+export const ApartmentForm = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [submitStatus, setSubmitStatus] = useState<FetchStatus>('normal')
   const {
