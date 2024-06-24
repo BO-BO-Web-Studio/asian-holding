@@ -1,31 +1,26 @@
 
 import classes from './application.module.scss'
 import useTranslation from 'next-translate/useTranslation';
-import { useState } from 'react';
-import { ApplicationForm } from '../..';
 import { Wrapper } from '@shared/ui/Wrapper';
 import { Button } from '@shared/ui/Button';
+import { useApplicationStore } from '@widgets/application/model/applicationStore';
+import { Form } from '../Form';
+
 export const Application = () => {
   const { t } = useTranslation('common')
-  const [isOpen, setOpen] = useState(false)
-  const setModal = () => {
-    setOpen(!isOpen)
-  }
-  return <Wrapper>
+  
+  const { toggle } = useApplicationStore(state => (state))
+  return <Wrapper className={classes.wrapper}>
     <div className={classes.application}>
-      <div className={classes.bl_text} >
-        <h3 className={classes.text}>
-          {t('applicationSectionText')}
+      <div className={classes.left} >
+        <h3 className={classes.title}>
+          {/* {t('applicationSectionText')} */}
+          application Section Text
         </h3>
       </div>
-      <Button
-        className={classes.button}
-        // bg='secondary'
-        onClick={() => setModal()}
-      >
-        {t('application')}
-      </Button>
+      <div className={classes.right} >
+        <Form />
+      </div>
     </div>
-    <ApplicationForm isOpen={isOpen} close={setModal} />
   </Wrapper>
 }

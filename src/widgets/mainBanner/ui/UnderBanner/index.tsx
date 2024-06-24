@@ -19,7 +19,7 @@ export const UnderBanner = () => {
                     </p>
                 </div>
                 {/* <div className={classes.right} > */}
-                    <Link href={'asd'} className={classes.link} >
+                    <div className={classes.link} >
                         <HandySvg
                             className={classes.svg}
                             src={'/assets/icons/arrow-top-right.svg'}
@@ -27,8 +27,9 @@ export const UnderBanner = () => {
                             height={14}
                             alt={'link'}
                         />
-                    </Link>
+                    </div>
                 {/* </div> */}
+                <Link className={classes.href} href={'/payment'}  />
             </div>
             <div className={classes.item} >
                 <div className={clsx(classes.left, classes.left_body)} >
@@ -40,7 +41,7 @@ export const UnderBanner = () => {
                             3620 сомони за м2
                         </h3>
                     </div>
-                    <Link className={classes.button} href={'asd'}>
+                    <div className={classes.button} >
                         Выбрать квартиру
                         <HandySvg
                             className={classes.svg_2}
@@ -49,7 +50,7 @@ export const UnderBanner = () => {
                             height={12}
                             alt={'link'}
                         />
-                    </Link>
+                    </div>
                 </div>
                 <div className={classes.right} >
                     <div className={classes.bl_image}>
@@ -61,6 +62,7 @@ export const UnderBanner = () => {
                         />
                     </div>
                 </div>
+                <Link className={classes.href} href={'/apartments/?price_min=3620'}  />
             </div>
         </div>
     </div>

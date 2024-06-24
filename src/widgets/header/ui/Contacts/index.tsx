@@ -12,6 +12,7 @@ import { ApplicationForm } from '@widgets/application'
 import { contacts } from '@shared/const/contacts'
 import { LangButton } from '@features/LangButton'
 import { Burger } from '../Burger'
+import { useApplicationStore } from '@widgets/application/model/applicationStore'
 
 function Contacts() {
   const pathname = usePathname()
@@ -20,6 +21,7 @@ function Contacts() {
   const setModal = () => {
     setOpen(!isOpen)
   }
+  const { toggle } = useApplicationStore(state => (state))
 
 
   return (
@@ -50,12 +52,11 @@ function Contacts() {
         className={classes.button}
         // bg='secondary'
         buttonSize='small'
-        onClick={() => setModal()}
+        onClick={() => toggle()}
       >
         {t('contactUs')}
       </Button> 
       <Burger />
-      <ApplicationForm isOpen={isOpen} close={setModal} />
     </div>
   )
 }

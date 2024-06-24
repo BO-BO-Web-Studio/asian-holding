@@ -10,6 +10,7 @@ import { getFetcher } from "@shared/api/fetcher/getFetcher";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { INews } from "@widgets/news/model/News";
 import { IProjectCard } from "@widgets/projects/model/IProjectCard";
+import { Application } from "@widgets/application";
 
 interface Props {
 	banners?: IMainSlide[]
@@ -52,6 +53,7 @@ export default function Home({ banners, news, residences, status }: InferGetServ
 				<SearchBar residences={residences} status={status} />
 				<PhotoGallery residences={residences} />
 				<NewsSection news={news} />
+				<Application />
 			</main>
 		</>
 	)

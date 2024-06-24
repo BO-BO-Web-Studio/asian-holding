@@ -13,12 +13,12 @@ export const ProjectInfo = ({project}: Props) => {
     return <div className={classes.wrapper}>
         <div className={classes.body} >
             <div className={classes.bl_img} >
-                <Image 
-                    src='/assets/images/company_1.png'
+                {project?.image && <Image 
+                    src={project?.image}
                     width={361}
                     height={153}
                     alt='logo_company'
-                />
+                />}
             </div>
             <ul className={classes.items} >
                 {project?.phone && <Link href={`tel:${project?.phone}`} className={classes.item} >

@@ -1,26 +1,26 @@
 @import 'src/@app/styles/variables';
 @import 'src/@app/styles/mixins';
 
-
+.wrapper {
+  background-color: $gray50;
+}
 .application {
   display: flex;
   justify-content: space-between;
-  padding: 32px;
-  margin-bottom: 132px;
-  background-color: $primary;
-  border-radius: 12px;
+  padding: 48px 0;
   overflow: hidden;
-  align-items: center;
+  align-items: flex-start;
 
   @media (max-width: $tablet) {
     flex-direction: column;
-    align-items: baseline;
-    padding: 20px;
-    margin-bottom: 40px;
+    align-items: flex-start;
+    padding: 24px 0;
   }
 }
 
-.bl_text {
+.left {
+  display: flex;
+  align-items: flex-start;
   flex-basis: 50%;
 
   @media (max-width: $tablet) {
@@ -29,13 +29,13 @@
   }
 }
 
-.text {
+.title {
   padding: 0;
   margin: 0;
-  font-size: 28px;
+  font-size: 36px;
   line-height: 114%;
   font-weight: 600;
-  color: $textWhite;
+  color: $textDark;
 
   @media (max-width: $tablet) {
     font-size: 20px;
@@ -44,4 +44,12 @@
 
 .button {
   height: max-content;
+}
+
+.right {
+  flex: 0 1 48%; 
+
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
 }

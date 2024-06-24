@@ -9,6 +9,7 @@ import classes from './headerMain.module.scss'
 import { useState } from 'react'
 import { Modal } from '@shared/ui/Modal'
 import useTranslation from 'next-translate/useTranslation'
+import { ModalForm } from '@widgets/application/ui/ModalForm'
 
 function HeaderMain() {
   const pathname = usePathname()
@@ -46,6 +47,7 @@ function HeaderMain() {
           </Modal>
         </div>
       </Wrapper>
+      <ModalForm />
     </div>
   )
 }

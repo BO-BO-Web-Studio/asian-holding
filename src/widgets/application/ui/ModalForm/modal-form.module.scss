@@ -21,19 +21,14 @@
 }
 
 .bl_title {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .items {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-
-  @media (max-width: $tablet) {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 .item:nth-child(3) {

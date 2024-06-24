@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import useTranslation from 'next-translate/useTranslation';
-import classes from './form.module.scss'
+import classes from './modal-form.module.scss'
 import toast from "react-hot-toast";
 import { FetchStatus } from "@shared/model";
 import { Modal } from "@shared/ui/Modal";
@@ -12,17 +12,13 @@ import { BarLoader } from "@shared/ui/loaders/BarLoader";
 import { Alert } from "@shared/ui/Alert";
 import { useApplicationStore } from "@widgets/application/model/applicationStore";
 
-interface Props {
-  isOpen: boolean
-  close(): void
-}
 interface FormData {
   name: string
   number: string
   gmail: string
 }
 
-export const Form = () => {
+export const ModalForm = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [submitStatus, setSubmitStatus] = useState<FetchStatus>('normal')
   const {
@@ -85,10 +81,22 @@ export const Form = () => {
     setSubmitStatus('fulfilled')
   }
 
-  return <form
+  return <Modal
+    isOpen={isOpen}
+    close={close}
+    isShowCloseButton={true}
+    contentClassName={classes.wrapper}
+    mainClassName={classes.body}
+  >
+    <form
       className={classes.form}
       onSubmit={handleSubmit(onSubmit)}
     >
+      <div className={classes.bl_title} >
+        <h2 className={classes.title} >
+          {t('application')}
+        </h2>
+      </div>
       {!!errorMessage && <Alert type="danger">{errorMessage}</Alert>}
       <div className={classes.items} >
         <div className={classes.item}>
@@ -128,6 +136,15 @@ export const Form = () => {
       <div className={classes.bl_buttons} >
         <Button
           type="submit"
+          bg='secondary'
+          fullWidth
+          className={classes.button_send}
+          onClick={() => toggle()}
+        >
+          отмена
+        </Button>
+        <Button
+          type="submit"
           fullWidth
           className={classes.button_send}
           onClick={(event) => {
@@ -148,4 +165,5 @@ export const Form = () => {
         </Button>
       </div>
     </form>
+  </Modal>
 }

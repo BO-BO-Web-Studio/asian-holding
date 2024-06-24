@@ -23,64 +23,64 @@ export const MainBanner = ({banners}: Props) => {
     }
     return <div className={classes.main_banner}>
             <Wrapper>
-            <div className={classes.banner} >
-                <Swiper
-                    className={classes.swiper}
-                    modules={[Navigation, Pagination, A11y]}
-                    spaceBetween={50}
-                    slidesPerView={1}
-                    loop={true}
-                    navigation={{
-                        prevEl: "#main-banner-prev",
-                        nextEl: "#main-banner-next",
-                        enabled: true,
-                    }}
-                    pagination={{ 
-                        enabled: true,
-                        el: '#bullet-main-banner',
-                        bulletClass: 'slider-custom-pagination-bullet',
-                        bulletActiveClass: 'slider-custom-pagination-bullet-active',
-                        clickable: true 
-                    }}
-                    >
-                        {banners.map((item) => 
-                        <SwiperSlide key={item.id}>
-                            <div className={classes.slide} >
-                                <div className={classes.bl_img} >
-                                    <Image
-                                        className={classes.img} 
-                                        src={item.img}
-                                        width={1390}
-                                        height={620}
-                                        alt={'banner'}
-                                        />
+                <div className={classes.banner} >
+                    <Swiper
+                        className={classes.swiper}
+                        modules={[Navigation, Pagination, A11y]}
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        loop={true}
+                        navigation={{
+                            prevEl: "#main-banner-prev",
+                            nextEl: "#main-banner-next",
+                            enabled: true,
+                        }}
+                        pagination={{ 
+                            enabled: true,
+                            el: '#bullet-main-banner',
+                            bulletClass: 'slider-custom-pagination-bullet',
+                            bulletActiveClass: 'slider-custom-pagination-bullet-active',
+                            clickable: true 
+                        }}
+                        >
+                            {banners.map((item) => 
+                            <SwiperSlide key={item.id}>
+                                <div className={classes.slide} >
+                                    <div className={classes.bl_img} >
+                                        <Image
+                                            className={classes.img} 
+                                            src={item.img}
+                                            width={1390}
+                                            height={620}
+                                            alt={'banner'}
+                                            />
+                                    </div>
+                                    <div className={classes.bl_button} >
+                                        <Button className={classes.button} buttonSize='medium' fullWidth>
+                                            Выбрать квартиру
+                                        </Button>
+                                    </div>
                                 </div>
-                                <div className={classes.bl_button} >
-                                    <Button className={classes.button} buttonSize='medium' fullWidth>
-                                        Выбрать квартиру
-                                    </Button>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        )}
-            </Swiper>
-                <div className={classes.bottom} >
-                    <SliderNav 
-                    className={classes.nav}
-                    prevId="main-banner-prev"
-                    nextId="main-banner-next"
-                    theme='light'
-                    >
-                    <div id={'bullet-main-banner'}  
-                        className={clsx(
-                        "slider-custom-pagination",
-                        "slider-custom-pagination-light",
-                        classes.bullets
-                        )} >
+                            </SwiperSlide>
+                            )}
+                </Swiper>
+                    <div className={classes.bottom} >
+                        <SliderNav 
+                        className={classes.nav}
+                        prevId="main-banner-prev"
+                        nextId="main-banner-next"
+                        theme='light'
+                        >
+                        <div id={'bullet-main-banner'}  
+                            className={clsx(
+                            "slider-custom-pagination",
+                            "slider-custom-pagination-light",
+                            classes.bullets
+                            )} >
+                        </div>
+                        </SliderNav>
                     </div>
-                    </SliderNav>
                 </div>
-            </div>
             <UnderBanner />
         </Wrapper>
     </div>
