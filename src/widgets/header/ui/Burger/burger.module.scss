@@ -40,7 +40,7 @@ $burgerColor: $primary;
 
   span {
     display: block;
-    width: 20px;
+    width: 21px;
     height: 2px;
     background: $burgerColor;
     position: absolute;
@@ -49,15 +49,15 @@ $burgerColor: $primary;
     transition: background 250ms;
 
     @media (max-width: $mobileLarge) {
-      width: 16px;
-      height: 1px;
+      // width: 16px;
+      height: 2.4px;
     }
 
     &::before,
     &::after {
       content: '';
-      width: 20px;
-      height: 2px;
+      width: 21px;
+      height: 2.4px;
       background: $burgerColor;
       position: absolute;
       top: -6px;
@@ -66,9 +66,9 @@ $burgerColor: $primary;
       transition: all 250ms;
 
       @media (max-width: $mobileLarge) {
-        width: 16px;
-        height: 1px;
-        top: -5px;
+        // width: 16px;
+        height: 2.4px;
+        top: -7px;
       }
     }
 
@@ -76,7 +76,7 @@ $burgerColor: $primary;
       top: 6px;
 
       @media (max-width: $mobileLarge) {
-        top: 5px;
+        top: 7px;
       }
     }
   }

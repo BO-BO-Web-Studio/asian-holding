@@ -1,11 +1,14 @@
 import { Payment } from "@widgets/payment"
+import useTranslation from "next-translate/useTranslation"
 import Head from "next/head"
 
 
 function Page() {
+    const { t } = useTranslation('common')
+
     return <>
         <Head>
-          <title>Рассрочка и ипотека | Asian Holding</title>
+          <title>{`${t('payment')} | Asian Holding`}</title>
           <meta name='description' content='Квартиры' />
         </Head>
         <Payment />

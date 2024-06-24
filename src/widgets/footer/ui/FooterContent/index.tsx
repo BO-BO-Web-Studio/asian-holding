@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import classes from './footer-content.module.scss'
 import { HandySvg } from 'handy-svg'
+import useTranslation from 'next-translate/useTranslation'
 
 const DataProjects:IItem[] = [
     {
@@ -78,6 +79,8 @@ interface IItem {
 }
 
 export const FooterContent = () => {
+    const { t } = useTranslation('common')
+
     return <div className={classes.footer} >
     <div className={classes.left} >
         <Link href='/'>
@@ -93,7 +96,7 @@ export const FooterContent = () => {
     <div className={classes.right} >
         <div className={classes.items} >
             <div className={classes.item}>
-                <h3 className={classes.item_title}>Проекты</h3>
+                <h3 className={classes.item_title}>{t('projects')}</h3>
                 <ul className={classes.links} >
                     {DataProjects.map((item) => 
                     <li className={classes.link_item} key={item.id} >
@@ -104,7 +107,7 @@ export const FooterContent = () => {
                 </ul>
             </div>
             <div className={classes.item}>
-                <h3 className={classes.item_title}>Способы покупки</h3>
+                <h3 className={classes.item_title}>{t('apartments')}</h3>
                 <ul className={classes.links} >
                     {TypeContacts.map((item) => 
                     <li className={classes.link_item} key={item.id} >
@@ -115,7 +118,7 @@ export const FooterContent = () => {
                 </ul>
             </div>
             <div className={classes.item}>
-                <h3 className={classes.item_title}>О компании</h3>
+                <h3 className={classes.item_title}>{t('aboutCompany')}</h3>
                 <ul className={classes.links} >
                     {AboutContacts.map((item) => 
                     <li className={classes.link_item} key={item.id} >
@@ -126,7 +129,7 @@ export const FooterContent = () => {
                 </ul>
             </div>
             <div className={classes.item}>
-                <h3 className={classes.item_title}>Контакты</h3>
+                <h3 className={classes.item_title}>{t('contacts')}</h3>
                 <ul className={classes.links} >
                     {DataContacts.map((item) => 
                     <li className={classes.link_item} key={item.id} >

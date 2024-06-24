@@ -3,6 +3,7 @@ import { Breadcrumb } from '@shared/ui/Breadcrumbs/Breadcrumb'
 import { HTMLAttributes } from 'react'
 import clsx from 'clsx'
 import { IBreadcrumb } from '@shared/model/IBreadcrumb'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props extends HTMLAttributes<HTMLUListElement> {
   items: IBreadcrumb[]
@@ -11,11 +12,13 @@ interface Props extends HTMLAttributes<HTMLUListElement> {
 }
 
 function Breadcrumbs({items, includeHome, className}: Props) {
+  const { t } = useTranslation('common')
+
   return (
     <ul className={clsx(classes.list, className)}>
       {includeHome && (
         <Breadcrumb
-          label="Главная"
+          label={t('main')}
           // icon="/assets/icons/home-breadcrumb.svg"
           link="/"
         />

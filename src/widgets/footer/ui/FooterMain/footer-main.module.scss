@@ -2,8 +2,12 @@
 @import 'src/@app/styles/mixins';
 
 .wrapper {
-    // margin-top: 120px;
+    margin-top: 120px;
     background-color: $gray1;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
 }
 .footer {
     padding: 48px 0;

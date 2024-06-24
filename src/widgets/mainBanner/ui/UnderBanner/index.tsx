@@ -3,22 +3,25 @@ import classes from './under-banner.module.scss'
 import Link from 'next/link'
 import clsx from 'clsx'
 import Image from 'next/image'
+import useTranslation from 'next-translate/useTranslation'
 
 export const UnderBanner = () => {
+    
+    const { t } = useTranslation('common')
+
     return <div className={classes.wrapper} >
         <div className={classes.items} >
             <div className={classes.item} >
                 <div className={classes.left} >
                     <div className={classes.header} >
                         <h3 className={classes.title} >
-                            Выгодная рассрочка от заказчика
+                            {t('underBanner1_title')}
                         </h3>
                     </div>
                     <p className={classes.text} >
-                        Получите выгодную рассрочку от заказчика на лучших условиях
+                        {t('underBanner1_text')}
                     </p>
                 </div>
-                {/* <div className={classes.right} > */}
                     <div className={classes.link} >
                         <HandySvg
                             className={classes.svg}
@@ -28,21 +31,20 @@ export const UnderBanner = () => {
                             alt={'link'}
                         />
                     </div>
-                {/* </div> */}
                 <Link className={classes.href} href={'/payment'}  />
             </div>
             <div className={classes.item} >
                 <div className={clsx(classes.left, classes.left_body)} >
                     <div>
                         <p className={classes.text}>
-                            Квартиры от
+                            {t('underBanner2_subtitle')}   
                         </p>
                         <h3 className={classes.title}>
-                            3620 сомони за м2
+                            {t('underBanner2_title')}
                         </h3>
                     </div>
                     <div className={classes.button} >
-                        Выбрать квартиру
+                        {t('chooseApartment')}
                         <HandySvg
                             className={classes.svg_2}
                             src={'/assets/icons/arrow-top-right.svg'}

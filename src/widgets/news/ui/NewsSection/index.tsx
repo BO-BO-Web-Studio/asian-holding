@@ -4,20 +4,22 @@ import { NewsMiniCard } from '../NewsMiniCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ButtonMore } from '@shared/ui/ButtonMore'
 import { INews } from '@widgets/news/model/News'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
     news?: INews[]
 }
 
 export const NewsSection = ({news}: Props) => {
-    
+    const { t } = useTranslation('common')
+
     if(!news) {
         return null
     }
     return <Section 
-        name='Новости'
+        name={t('news')}
         buttonMore={
-            <ButtonMore name='Смотреть все новости' link='/news' />
+            <ButtonMore name={t('viewAllNews')} link='/news' />
         }
         lastSection
         >

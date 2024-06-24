@@ -2,6 +2,7 @@ import { getFetcher } from "@shared/api/fetcher/getFetcher"
 import { ContactsPage } from "@widgets/contacts"
 import { IProjectCard } from "@widgets/projects/model/IProjectCard"
 import { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import useTranslation from "next-translate/useTranslation"
 import Head from "next/head"
 
 interface Props {
@@ -20,11 +21,11 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ locale, qu
 }
 
 export default function Page({ residences }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-
+    const { t } = useTranslation('common')
     return <>
         <Head>
-          <title>Контакты | Asian Holding</title>
-          <meta name='description' content='Контакты' />
+          <title>{`${t('contacts')} | Asian Holding`}</title>
+          <meta name='description' content={`${t('contacts')}`} />
         </Head>
         <ContactsPage residences={residences} />
         </>

@@ -9,6 +9,7 @@ import { useQuery } from 'react-query'
 import { getFetcher } from '@shared/api/fetcher/getFetcher'
 import { IProjectCard, IResidences } from '@widgets/projects/model/IProjectCard'
 import { IStatus } from '@widgets/searchBar'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
   apartments?: IResidences[]
@@ -23,7 +24,7 @@ export const Apartments = ({apartments, residences, status}: Props) => {
   const [activeStatus, setActiveStatus] = useState<number>(0)
   const [lowerValue, setLowerValue] = useState<number>(10000);
   const [upperValue, setUpperValue] = useState<number>(356000);
-
+  const { t } = useTranslation('common')
   const [pageIndex, setPageIndex] = useState(
     searchParams.get("page") ? Number(searchParams.get("page")) - 1 : 0
   );
@@ -73,7 +74,7 @@ export const Apartments = ({apartments, residences, status}: Props) => {
     return <Wrapper className={classes.wrapper}>
         <Breadcrumbs
           className={classes.breadcrumbs}
-          items={[{label: 'Квартиры', isActive: true}]}
+          items={[{label: (t('apartment')), isActive: true}]}
           includeHome
         />
         <SearchBarMain status={status} residences={residences} />

@@ -3,6 +3,7 @@ import { Apartments } from "@widgets/apartments"
 import { IProjectCard, IResidences } from "@widgets/projects/model/IProjectCard"
 import { IStatus } from "@widgets/searchBar"
 import { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import useTranslation from "next-translate/useTranslation"
 import Head from "next/head"
 
 
@@ -28,10 +29,13 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ locale, qu
 }
 
 export default function Page({apartments, residences, status}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+    const { t } = useTranslation('common')
+
+
     return <>
         <Head>
-          <title>Квартиры | Asian Holding</title>
-          <meta name='description' content='Квартиры' />
+          <title>{`${t('chooseApartment')} | Asian Holding`}</title>
+          <meta name='description' content={`${t('chooseApartment')}`} />
         </Head>
           <Apartments 
             apartments={apartments} 

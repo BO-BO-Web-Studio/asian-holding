@@ -4,14 +4,14 @@ import { Breadcrumbs } from '@shared/ui/Breadcrumbs'
 import { Section } from '@shared/ui/Section'
 import { NewsCard } from '../NewsCard'
 import { INews } from '@widgets/news/model/News'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
     news?: INews[]
 }
 
 export const News = ({news}: Props) => {
-    
-
+    const { t } = useTranslation('common')
     if(!news) {
         return null
     }
@@ -20,11 +20,11 @@ export const News = ({news}: Props) => {
             <Wrapper className={classes.wrapper} >
                 <Breadcrumbs
                     className={classes.breadcrumbs}
-                    items={[{label: 'Новости', isActive: true}]}
+                    items={[{label: (t('news')), isActive: true}]}
                     includeHome
                     />
             </Wrapper>
-            <Section name='Новости' >
+            <Section name={t('about')} >
                 <ul className={classes.items}>
                     {news.map((item) => 
                     <NewsCard 

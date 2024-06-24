@@ -1,4 +1,5 @@
 import '@styles/index.scss'
+import { ModalForm } from '@widgets/application/ui/ModalForm';
 import { Footer } from '@widgets/footer';
 import { Header } from '@widgets/header';
 import type { AppProps } from "next/app";
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Header />
           <Component {...pageProps} />
           <Footer />
+          <ModalForm />
         </QueryClientProvider>
   </>;
 }

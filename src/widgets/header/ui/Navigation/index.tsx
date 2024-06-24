@@ -13,18 +13,16 @@ import { LangButton } from '@features/LangButton'
 import { HandySvg } from 'handy-svg'
 import { contacts } from '@shared/const/contacts'
 import Image from 'next/image'
+import { useApplicationStore } from '@widgets/application/model/applicationStore'
 
-interface Props {
-  isOpenModal: boolean
-  setModal: () => void
-}
-function Navigation({ setModal, isOpenModal }: Props) {
+
+function Navigation() {
   const pathname = usePathname()
   const { isOpen, close } = useMenuStore(({ isOpen, close }) => ({
     isOpen,
     close,
   }))
-
+  const { toggle } = useApplicationStore(state => (state))
   const { t } = useTranslation('menu')
 
   useLockBodyScroll(isOpen);
@@ -32,7 +30,7 @@ function Navigation({ setModal, isOpenModal }: Props) {
     <nav className={clsx(classes.nav, pathname === '/' && classes.mainPage)}>
       <div className={clsx(classes.menu, isOpen && classes.open)}>
         <div className={classes.logo_bl}>
-          <div className={classes.logo} >
+          <Link href={'/'} className={classes.logo} >
               <Image
                 src={`/assets/icons/logo-main.svg`}
                 alt="iontravel"
@@ -40,7 +38,7 @@ function Navigation({ setModal, isOpenModal }: Props) {
                 height={50}
                 priority
               />
-          </div>
+          </Link>
           <Burger />
         </div>
         <ul className={classes.list}>
@@ -64,7 +62,7 @@ function Navigation({ setModal, isOpenModal }: Props) {
         </ul>
         <Button
           className={classes.button}
-          onClick={() => setModal()}
+          onClick={() => toggle()}
         >
             Оставить заявку
         </Button>
@@ -87,16 +85,6 @@ function Navigation({ setModal, isOpenModal }: Props) {
             </div>
           </div>
         </div>
-        <Modal
-          isOpen={isOpenModal}
-          close={setModal}
-          isShowCloseButton={true}
-        >
-          <h1>Hello</h1>
-          {/* <ModalContent> */}
-          {/* <ApplicationForm /> */}
-          {/* </ModalContent> */}
-        </Modal>
       </div>
       <div className={clsx(classes.wrapper, isOpen && classes.open_wrapper)} ></div>
     </nav>

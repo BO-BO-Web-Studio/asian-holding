@@ -1,10 +1,9 @@
 import { getFetcher } from "@shared/api/fetcher/getFetcher"
-import { Apartments } from "@widgets/apartments"
-import { News } from "@widgets/news"
 import { INews } from "@widgets/news/model/News"
 import { Projects } from "@widgets/projects"
 import { IProjectCard } from "@widgets/projects/model/IProjectCard"
 import { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import useTranslation from "next-translate/useTranslation"
 import Head from "next/head"
 
 interface Props {
@@ -28,11 +27,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ locale, qu
 }
 
 export default function Page({residences, news }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+    const { t } = useTranslation('common')
 
     return <>
         <Head>
-          <title>Проекты | Asian Holding</title>
-          <meta name='description' content='Новости' />
+          <title>{`${t('ourProjects')} | Asian Holding`}</title>
+          <meta name='description' content={`${t('ourProjects')}`} />
         </Head>
         <Projects residences={residences} news={news} />
         </>

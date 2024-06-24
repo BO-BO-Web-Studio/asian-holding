@@ -5,19 +5,22 @@ import { Navigation, Pagination, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { HandySvg } from "handy-svg";
 import clsx from "clsx";
 import SliderNav from "@shared/ui/SliderNav/SliderNav";
 import { Button } from "@shared/ui/Button";
 import Image from "next/image";
 import { UnderBanner } from "../UnderBanner";
 import { IMainSlide } from "@widgets/mainBanner/model/MainBanner";
+import useTranslation from "next-translate/useTranslation";
+import { useApplicationStore } from "@widgets/application/model/applicationStore";
 
 interface Props {
     banners?: IMainSlide[]
 }
 export const MainBanner = ({banners}: Props) => {
 
+    const { t } = useTranslation('common')
+    const { toggle } = useApplicationStore(state => (state))
     if(!banners) {
         return null
     }
@@ -56,14 +59,19 @@ export const MainBanner = ({banners}: Props) => {
                                             />
                                     </div>
                                     <div className={classes.bl_button} >
-                                        <Button className={classes.button} buttonSize='medium' fullWidth>
-                                            Выбрать квартиру
+                                        <Button 
+                                            className={classes.button} 
+                                            buttonSize='medium' 
+                                            fullWidth
+                                            onClick={() => toggle()}
+                                            >
+                                            {t('chooseApartment')}
                                         </Button>
                                     </div>
                                 </div>
                             </SwiperSlide>
                             )}
-                </Swiper>
+                    </Swiper>
                     <div className={classes.bottom} >
                         <SliderNav 
                         className={classes.nav}

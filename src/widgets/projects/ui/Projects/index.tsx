@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@shared/ui/Breadcrumbs"
 import { Wrapper } from "@shared/ui/Wrapper"
 import { IProjectCard } from "@widgets/projects/model/IProjectCard"
 import { INews } from "@widgets/news/model/News"
+import useTranslation from "next-translate/useTranslation"
 
 interface Props {
     residences?: IProjectCard[]
@@ -12,11 +13,13 @@ interface Props {
 }
 
 export const Projects = ({residences, news}: Props) => {
+    const { t } = useTranslation('common')
+
     return <div className={classes.projects}>
     <Wrapper>
         <Breadcrumbs
             className={classes.breadcrumbs}
-            items={[{label: 'Проекты', isActive: true}]}
+            items={[{label: (t('projects')), isActive: true}]}
             includeHome
             />
     </Wrapper>

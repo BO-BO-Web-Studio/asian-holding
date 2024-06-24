@@ -7,6 +7,7 @@ import { HandySvg } from "handy-svg"
 import { useWindowSize } from "@uidotdev/usehooks";
 import { IProjectCard } from "@widgets/projects/model/IProjectCard"
 import { IStatus } from "@widgets/searchBar/model/searchBar"
+import useTranslation from "next-translate/useTranslation"
 
 interface Props {
     residences?: IProjectCard[] | null
@@ -14,7 +15,7 @@ interface Props {
 }
 
 export const SearchBar = ({residences, status}: Props) => {
-
+    const { t } = useTranslation('common')
     const { isOpen, toggle } = useSearchStore(({ isOpen, toggle }) => ({
         isOpen,
         toggle,
@@ -22,7 +23,7 @@ export const SearchBar = ({residences, status}: Props) => {
       const size = useWindowSize();
       return <Section
         className={classes.section} 
-        name='Выберите квартиру'
+        name={t('chooseApartments')}
         buttonMore={
             <button 
                 className={classes.button}

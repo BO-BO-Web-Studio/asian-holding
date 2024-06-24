@@ -2,13 +2,8 @@ import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import classes from './contacts.module.scss'
 import { HandySvg } from 'handy-svg'
-
-// import useTranslation from 'next-translate/useTranslation';
-
-import { useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 import { Button } from '@shared/ui/Button'
-import { ApplicationForm } from '@widgets/application'
 import { contacts } from '@shared/const/contacts'
 import { LangButton } from '@features/LangButton'
 import { Burger } from '../Burger'
@@ -17,10 +12,6 @@ import { useApplicationStore } from '@widgets/application/model/applicationStore
 function Contacts() {
   const pathname = usePathname()
   const { t } = useTranslation('common')
-  const [isOpen, setOpen] = useState(false)
-  const setModal = () => {
-    setOpen(!isOpen)
-  }
   const { toggle } = useApplicationStore(state => (state))
 
 
@@ -39,7 +30,6 @@ function Contacts() {
           />
         </div>
         <div className={classes.phone} >
-          {/* <span>{t('phone')}</span> */}
           <a className={classes.phone_link} href={`tel:${contacts.link}`}>
             {contacts.phone}
           </a>
@@ -50,11 +40,10 @@ function Contacts() {
       </div>
       <Button
         className={classes.button}
-        // bg='secondary'
         buttonSize='small'
         onClick={() => toggle()}
       >
-        {t('contactUs')}
+        {t('requestCall')}
       </Button> 
       <Burger />
     </div>

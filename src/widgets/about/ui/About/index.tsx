@@ -5,7 +5,14 @@ import { Gallery, IGallery } from '@shared/ui/Gallery'
 import { AboutContent } from '../AboutContent'
 import { ProjectsSection } from '@widgets/projects'
 import { NewsSection } from '@widgets/news'
+import useTranslation from 'next-translate/useTranslation'
+import { INews } from '@widgets/news/model/News'
+import { IProjectCard } from '@widgets/projects/model/IProjectCard'
 
+interface Props {
+    news?: INews[]
+    residences?: IProjectCard[]
+}
 const galleryDate: IGallery[] = [
     {
         id: 1,
@@ -25,23 +32,21 @@ const galleryDate: IGallery[] = [
     },
 ]
 
-export const About = () => {
+export const About = ({news, residences}: Props) => {
+    const { t } = useTranslation('aboutCompany')
     return <>
     <Section 
         name={<><span>Asian Holding &nbsp;</span> 
-                – это динамичная и инновационная компания, специализирующаяся на строительстве
-                новостроек высокого качества
+                {t('mainTitle')}
             </>} 
         buttonMore={
                 <p>
-                    Asian Holding гордится своими достижениями и стремится к постоянному
-                    совершенствованию. Наша цель – создавать пространства, которые вдохновляют, 
-                    содействуют развитию, и оставляют непередаваемое впечатление.
+                    {t('mainText')}
                 </p>}
         breadcrumbs={
             <Breadcrumbs
                 className={classes.breadcrumbs}
-                items={[{label: 'О компании', isActive: true}]}
+                items={[{label: (t('about')), isActive: true}]}
                 includeHome
           />
         }
@@ -55,7 +60,7 @@ export const About = () => {
                 />
     </Section>
     <AboutContent />
-    <ProjectsSection />
-    <NewsSection />
+    <ProjectsSection residences={residences} />
+    <NewsSection news={news} />
     </>
 }

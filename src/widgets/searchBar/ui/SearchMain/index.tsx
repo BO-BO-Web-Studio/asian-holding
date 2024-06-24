@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useSearchStore } from '@widgets/searchBar/model/searchStore'
 import { IProjectCard } from '@widgets/projects/model/IProjectCard'
 import { IStatus } from '@widgets/searchBar/model/searchBar'
+import useTranslation from 'next-translate/useTranslation'
 const complexData = [
     {
         id: 1,
@@ -54,7 +55,7 @@ export const SearchMain = ({residences, status}: Props) => {
     const [activeStatus, setActiveStatus] = useState<number[]>([0])
     const [lowerValue, setLowerValue] = useState(10000);
     const [upperValue, setUpperValue] = useState(356000);
-    
+    const { t } = useTranslation('common')
     const { close } = useSearchStore(({ close }) => ({
         close,
       }))
@@ -109,7 +110,7 @@ export const SearchMain = ({residences, status}: Props) => {
     }
     return  <div className={classes.body} >
     <h3 className={classes.title} >
-        Фильтр
+        {t('filter')}
     </h3>
     <div className={classes.radio} >
         <RadioItems 
@@ -157,7 +158,7 @@ export const SearchMain = ({residences, status}: Props) => {
             onClick={() => close()}
             className={classes.button}
             >
-            Смотреть
+            {t('view')}
         </Button>
     </div>
     </div>

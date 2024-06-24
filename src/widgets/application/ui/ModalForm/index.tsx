@@ -105,34 +105,34 @@ export const ModalForm = () => {
       <div className={classes.items} >
         <div className={classes.item}>
           <Input
-            label={t('questionLabel1')}
+            label={t('input_name')}
             groupProps={{ className: classes.inputGroup }}
             {...register('name', {
               required: 'What is your name?',
             })}
-            placeholder={t('questionInput1')}
+            placeholder={t('input_name')}
             errorMessage={errors.name?.message}
           />
         </div>
         <div className={classes.item}>
           <Input
-            label={t('questionLabel3')}
+            label={t('input_surname')}
             groupProps={{ className: classes.inputGroup }}
             {...register('gmail', {
               required: 'Exaple@gmail.com?',
             })}
-            placeholder={t('questionInput3')}
+            placeholder={t('input_surname')}
             errorMessage={errors.gmail?.message}
           />
         </div>
         <div className={classes.item}>
           <Input
-            label={t('questionLabel2')}
+            label={t('phoneNumber')}
             groupProps={{ className: classes.inputGroup }}
             {...register('number', {
               required: 'Phone number?',
             })}
-            placeholder={t('questionInput2')}
+            placeholder={t('phoneNumber')}
             errorMessage={errors.number?.message}
           />
         </div>
@@ -145,7 +145,7 @@ export const ModalForm = () => {
           className={classes.button_send}
           onClick={() => toggle()}
         >
-          отмена
+          {t('cancel')}
         </Button>
         <Button
           type="submit"

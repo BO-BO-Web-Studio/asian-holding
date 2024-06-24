@@ -4,17 +4,19 @@ import Tabs from '@shared/ui/Tabs/Tabs'
 import { useState } from 'react'
 import { Section } from '@shared/ui/Section'
 import { IProjectCard } from '@widgets/projects/model/IProjectCard'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
     residences?: IProjectCard[]
 }
 export const PhotoGallery = ({residences}: Props) => {
+    const { t } = useTranslation('common')
     const [activeId, setActiveId] = useState<number>(1)
     if(!residences) {
         return null
     }
     return <div className={classes.asd}>
-        <Section name='Фотогалерея наших проектов' > 
+        <Section name={t('galleryProjectsTitle')} > 
             <Tabs 
                 headers={residences}
                 activeId={activeId}
@@ -28,3 +30,4 @@ export const PhotoGallery = ({residences}: Props) => {
     </div>
 }
 
+   

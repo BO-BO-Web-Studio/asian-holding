@@ -6,6 +6,7 @@ import { IGallery } from "@shared/model/IGallery"
 import { ProjectInfo } from '../ProjectInfo'
 import clsx from 'clsx'
 import { IProjectCard } from '@widgets/projects/model/IProjectCard'
+import useTranslation from 'next-translate/useTranslation'
 
 const galleryDate: IGallery[] = [
     {
@@ -32,6 +33,7 @@ interface Props {
 
 
 export const ProjectsSlug = ({project}: Props) => {
+    const { t } = useTranslation('common')
 
     return <div className={classes.wrapper}>
         <Section 
@@ -42,8 +44,8 @@ export const ProjectsSlug = ({project}: Props) => {
                 <Breadcrumbs
                 className={classes.breadcrumbs}
                 items={[
-                    {label: 'Проекты', link: '/projects'},
-                    {label: 'Подробнее', isActive: true}
+                    {label: (t('projects')), link: '/projects'},
+                    {label: (t('more')), isActive: true}
                 ]}
                 includeHome
                 /> }
